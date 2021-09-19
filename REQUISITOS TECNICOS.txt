@@ -1,0 +1,16 @@
+REQUISITOS TECNICOS
+
+Los módulos, herramientas y/o aplicaciones informáticas a desarrollar deberán apegarse a las
+siguientes especificaciones técnicas:
+
+IDIOMA: ES, EN
+SO: Windows
+Lenguaje de Programacion: C#, SQL
+Tipo de Base de Datos: Azure Database for MySQL, SQL
+
+El código fuente generado por el desarrollo de herramientas o aplicaciones informáticas, así como
+el código fuente generado a partir de las actualizaciones y el desarrollo de nuevos módulos de la
+plataforma, y toda la información cargada al repositorio deberá ser descargable en cualquier
+momento o al final del contrato para su resguardo en infraestructura del NOMBREDENUESTROPROYECTO, siendo propiedad
+de éste.
+
