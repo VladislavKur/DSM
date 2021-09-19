@@ -1,34 +1,26 @@
 //////////////////////////////////////// COMANDOS GITHUB ///////////////////////////////////
 
-git init   // crear repositorio
+git clone urlRepo.git//clonar
 
-git config --global push.default matching  //para enlazar github version antigua (recomendado)
+git pull // descargar lo que hay(de la rama en la nube)
 
-git remote add origin https://github.com/NOMBRE_USUARIO_GIT/NOMBRE_REPOSITORIO.git // enlazar repositorio
-
-git push -u origin master
-
-git clone //clonar
-
-git pull // descargar lo que hay
-
-git push // cargar lo que hay
+git push // subir a la Rama(nube)
 
 git commit -am "nombre del commit" // hacer un commit
 
 git add * //añadir todos cambios de los que vas a hacer commit
 
-git fetch // para actualizar en la nube
+git fetch // para actualizar todas ramas de la nube en LOCAL
 
 git checkout nombreDeLaRama // cambiar de rama
 
 git checkout -b nombreDeLaRama // crear y mover a esa rama
 
-git merge nombreDeLaRama // para mezclar codigo de una rama a la tuya
+git merge nombreRamaAMergear RamaAlaQueMergear // para mezclar codigo de una rama a la tuya (TIENES QUE ESTAR EN LA RAMA "RamaAlaQueMergear")
 
-git reset --hard // quitar todo, poner lo de la nube de nuevo
+git reset --hard // quitar todo, y volver al ultimo commit
 
-git branch // te dice en que carpeta estas de la rama
+git branch // te dice las ramas y en que rama estas
 
 git branch nombre // te mueve a esa rama
 
