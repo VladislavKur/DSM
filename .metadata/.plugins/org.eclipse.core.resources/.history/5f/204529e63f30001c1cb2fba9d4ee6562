@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:es.ua.dlsi.ooh="http://www.dlsi.ua.es/ooh/conceptualView/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <es.ua.dlsi.ooh:ConceptualModel xmi:id="_MeOXIDA9EeyJDrQfDBxrAg" name="DSM"/>
+  <notation:Diagram xmi:id="_Mes4QDA9EeyJDrQfDBxrAg" type="ConceptualView" element="_MeOXIDA9EeyJDrQfDBxrAg" name="default.domainModel" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_MetfUDA9EeyJDrQfDBxrAg"/>
+  </notation:Diagram>
+</xmi:XMI>

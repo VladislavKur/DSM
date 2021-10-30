@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:es.ua.dlsi.ooh="http://www.dlsi.ua.es/ooh/conceptualView/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <es.ua.dlsi.ooh:ConceptualModel xmi:id="_MeOXIDA9EeyJDrQfDBxrAg" name="DSM">
+    <elements xmi:type="es.ua.dlsi.ooh:Class" xmi:id="_RWYY4DA9EeyJDrQfDBxrAg" name="Usuario" alias="Usuario">
+      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_ErQUoDA-EeyJDrQfDBxrAg" name="new" operationType="New" type="Object" typeObject="_RWYY4DA9EeyJDrQfDBxrAg">
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbFbwDBFEeyPz9WGfqa3Lg" name="p_email"/>
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbFbwTBFEeyPz9WGfqa3Lg" name="p_nombre"/>
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbFbwjBFEeyPz9WGfqa3Lg" name="p_apellidos"/>
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbFbwzBFEeyPz9WGfqa3Lg" name="p_sexo"/>
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbFbxDBFEeyPz9WGfqa3Lg" name="p_edad" type="Integer"/>
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbGC0DBFEeyPz9WGfqa3Lg" name="p_orientacion sexual"/>
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbGC0TBFEeyPz9WGfqa3Lg" name="p_pass" type="Password"/>
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbGC0jBFEeyPz9WGfqa3Lg" name="p_nickname"/>
+      </operations>
+      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_MBb4ADA-EeyJDrQfDBxrAg" name="modify" operationType="Modifier" type="Void">
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbGC0zBFEeyPz9WGfqa3Lg" name="p_Usuario_OID" type="OID" typeObject="_RWYY4DA9EeyJDrQfDBxrAg"/>
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbGC1DBFEeyPz9WGfqa3Lg" name="p_nombre"/>
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbGC1TBFEeyPz9WGfqa3Lg" name="p_apellidos"/>
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbGC1jBFEeyPz9WGfqa3Lg" name="p_sexo"/>
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbGC1zBFEeyPz9WGfqa3Lg" name="p_edad" type="Integer"/>
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbGC2DBFEeyPz9WGfqa3Lg" name="p_orientacion sexual"/>
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbGC2TBFEeyPz9WGfqa3Lg" name="p_pass" type="Password"/>
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbGp4DBFEeyPz9WGfqa3Lg" name="p_nickname"/>
+      </operations>
+      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_MBb4CDA-EeyJDrQfDBxrAg" name="destroy" operationType="Destroy" type="Void">
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbGp4TBFEeyPz9WGfqa3Lg" name="p_Usuario_OID" type="OID" typeObject="_RWYY4DA9EeyJDrQfDBxrAg"/>
+      </operations>
+      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_Wuq2wDA-EeyJDrQfDBxrAg" name="readOID" operationType="ReadOID" type="Object" typeObject="_RWYY4DA9EeyJDrQfDBxrAg">
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_AbGp4jBFEeyPz9WGfqa3Lg" name="p_Usuario_OID" type="OID" typeObject="_RWYY4DA9EeyJDrQfDBxrAg"/>
+      </operations>
+      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_Wurd0TA-EeyJDrQfDBxrAg" name="readAll" operationType="ReadAll" type="Object" collectionType="List" typeObject="_RWYY4DA9EeyJDrQfDBxrAg"/>
+      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_qmRTUDA-EeyJDrQfDBxrAg" name="loadRecommended" type="Void">
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_qmR6YDA-EeyJDrQfDBxrAg" name="p_oid" type="OID" typeObject="_RWYY4DA9EeyJDrQfDBxrAg"/>
+      </operations>
+      <attributes xmi:type="es.ua.dlsi.ooh:Attribute" xmi:id="_ZOj2EDA9EeyJDrQfDBxrAg" alias="Email" name="email" isOID="true" unique="true" isToken="true"/>
+      <attributes xmi:type="es.ua.dlsi.ooh:Attribute" xmi:id="_d8b6cDA9EeyJDrQfDBxrAg" alias="nombre" name="nombre"/>
+      <attributes xmi:type="es.ua.dlsi.ooh:Attribute" xmi:id="_fHqXcDA9EeyJDrQfDBxrAg" alias="apellidos" name="apellidos"/>
+      <attributes xmi:type="es.ua.dlsi.ooh:Attribute" xmi:id="_fNddcDA9EeyJDrQfDBxrAg" alias="sexo" name="sexo"/>
+      <attributes xmi:type="es.ua.dlsi.ooh:Attribute" xmi:id="_fRfB0DA9EeyJDrQfDBxrAg" alias="edad" name="edad" type="Integer"/>
+      <attributes xmi:type="es.ua.dlsi.ooh:Attribute" xmi:id="_fTPVUDA9EeyJDrQfDBxrAg" alias="orientacion sexual" name="orientacion sexual"/>
+      <attributes xmi:type="es.ua.dlsi.ooh:Attribute" xmi:id="_QWudQDA-EeyJDrQfDBxrAg" alias="pass" name="pass" type="Password"/>
+      <attributes xmi:type="es.ua.dlsi.ooh:Attribute" xmi:id="__bPvYDBEEeyPz9WGfqa3Lg" alias="nickname" name="nickname"/>
+    </elements>
+  </es.ua.dlsi.ooh:ConceptualModel>
+  <notation:Diagram xmi:id="_Mes4QDA9EeyJDrQfDBxrAg" type="ConceptualView" element="_MeOXIDA9EeyJDrQfDBxrAg" name="default.domainModel" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_RWiw8DA9EeyJDrQfDBxrAg" type="2003" element="_RWYY4DA9EeyJDrQfDBxrAg">
+      <children xmi:type="notation:DecorationNode" xmi:id="_RWkmIDA9EeyJDrQfDBxrAg" type="5005"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_RWl0QDA9EeyJDrQfDBxrAg" type="7003">
+        <children xmi:type="notation:Shape" xmi:id="_ZOngcDA9EeyJDrQfDBxrAg" type="3003" element="_ZOj2EDA9EeyJDrQfDBxrAg" fontName="Segoe UI">
+          <children xmi:type="notation:DecorationNode" xmi:id="_ZOoHgDA9EeyJDrQfDBxrAg" type="5007"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZOngcTA9EeyJDrQfDBxrAg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_d8b6cTA9EeyJDrQfDBxrAg" type="3003" element="_d8b6cDA9EeyJDrQfDBxrAg" fontName="Segoe UI">
+          <children xmi:type="notation:DecorationNode" xmi:id="_d8chgDA9EeyJDrQfDBxrAg" type="5007"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d8b6cjA9EeyJDrQfDBxrAg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_fHq-gDA9EeyJDrQfDBxrAg" type="3003" element="_fHqXcDA9EeyJDrQfDBxrAg" fontName="Segoe UI">
+          <children xmi:type="notation:DecorationNode" xmi:id="_fHq-gjA9EeyJDrQfDBxrAg" type="5007"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fHq-gTA9EeyJDrQfDBxrAg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_fNeEgDA9EeyJDrQfDBxrAg" type="3003" element="_fNddcDA9EeyJDrQfDBxrAg" fontName="Segoe UI">
+          <children xmi:type="notation:DecorationNode" xmi:id="_fNeEgjA9EeyJDrQfDBxrAg" type="5007"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fNeEgTA9EeyJDrQfDBxrAg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_fRgP8DA9EeyJDrQfDBxrAg" type="3003" element="_fRfB0DA9EeyJDrQfDBxrAg" fontName="Segoe UI">
+          <children xmi:type="notation:DecorationNode" xmi:id="_fRgP8jA9EeyJDrQfDBxrAg" type="5007"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fRgP8TA9EeyJDrQfDBxrAg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_fTP8YDA9EeyJDrQfDBxrAg" type="3003" element="_fTPVUDA9EeyJDrQfDBxrAg" fontName="Segoe UI">
+          <children xmi:type="notation:DecorationNode" xmi:id="_fTP8YjA9EeyJDrQfDBxrAg" type="5007"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fTP8YTA9EeyJDrQfDBxrAg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_sf2cYTBEEeyPz9WGfqa3Lg" type="3003" element="_QWudQDA-EeyJDrQfDBxrAg" fontName="Segoe UI">
+          <children xmi:type="notation:DecorationNode" xmi:id="_sf2cYzBEEeyPz9WGfqa3Lg" type="5007"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sf2cYjBEEeyPz9WGfqa3Lg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="__bVO8DBEEeyPz9WGfqa3Lg" type="3003" element="__bPvYDBEEeyPz9WGfqa3Lg" fontName="Segoe UI">
+          <children xmi:type="notation:DecorationNode" xmi:id="__bVO8jBEEeyPz9WGfqa3Lg" type="5007"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="__bVO8TBEEeyPz9WGfqa3Lg"/>
+        </children>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_RWl0QTA9EeyJDrQfDBxrAg"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_RWl0QjA9EeyJDrQfDBxrAg"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_RWl0QzA9EeyJDrQfDBxrAg" type="7004">
+        <children xmi:type="notation:Node" xmi:id="_ErT_ADA-EeyJDrQfDBxrAg" type="3004" element="_ErQUoDA-EeyJDrQfDBxrAg">
+          <children xmi:type="notation:DecorationNode" xmi:id="_ErT_BTA-EeyJDrQfDBxrAg" type="5004"/>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_ErT_ATA-EeyJDrQfDBxrAg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_ErT_AjA-EeyJDrQfDBxrAg" fontName="Segoe UI"/>
+          <styles xmi:type="notation:FillStyle" xmi:id="_ErT_AzA-EeyJDrQfDBxrAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ErT_BDA-EeyJDrQfDBxrAg"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_MBgJdjA-EeyJDrQfDBxrAg" type="3004" element="_MBb4ADA-EeyJDrQfDBxrAg">
+          <children xmi:type="notation:DecorationNode" xmi:id="_MBgJezA-EeyJDrQfDBxrAg" type="5004"/>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_MBgJdzA-EeyJDrQfDBxrAg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_MBgJeDA-EeyJDrQfDBxrAg" fontName="Segoe UI"/>
+          <styles xmi:type="notation:FillStyle" xmi:id="_MBgJeTA-EeyJDrQfDBxrAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MBgJejA-EeyJDrQfDBxrAg"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_MBgwgDA-EeyJDrQfDBxrAg" type="3004" element="_MBb4CDA-EeyJDrQfDBxrAg">
+          <children xmi:type="notation:DecorationNode" xmi:id="_MBgwhTA-EeyJDrQfDBxrAg" type="5004"/>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_MBgwgTA-EeyJDrQfDBxrAg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_MBgwgjA-EeyJDrQfDBxrAg" fontName="Segoe UI"/>
+          <styles xmi:type="notation:FillStyle" xmi:id="_MBgwgzA-EeyJDrQfDBxrAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MBgwhDA-EeyJDrQfDBxrAg"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_WusE4DA-EeyJDrQfDBxrAg" type="3004" element="_Wuq2wDA-EeyJDrQfDBxrAg">
+          <children xmi:type="notation:DecorationNode" xmi:id="_Wusr8DA-EeyJDrQfDBxrAg" type="5004"/>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_WusE4TA-EeyJDrQfDBxrAg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_WusE4jA-EeyJDrQfDBxrAg" fontName="Segoe UI"/>
+          <styles xmi:type="notation:FillStyle" xmi:id="_WusE4zA-EeyJDrQfDBxrAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WusE5DA-EeyJDrQfDBxrAg"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_Wusr8TA-EeyJDrQfDBxrAg" type="3004" element="_Wurd0TA-EeyJDrQfDBxrAg">
+          <children xmi:type="notation:DecorationNode" xmi:id="_Wusr9jA-EeyJDrQfDBxrAg" type="5004"/>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_Wusr8jA-EeyJDrQfDBxrAg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_Wusr8zA-EeyJDrQfDBxrAg" fontName="Segoe UI"/>
+          <styles xmi:type="notation:FillStyle" xmi:id="_Wusr9DA-EeyJDrQfDBxrAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Wusr9TA-EeyJDrQfDBxrAg"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_qmTIgDA-EeyJDrQfDBxrAg" type="3004" element="_qmRTUDA-EeyJDrQfDBxrAg">
+          <children xmi:type="notation:DecorationNode" xmi:id="_qmTIhTA-EeyJDrQfDBxrAg" type="5004"/>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_qmTIgTA-EeyJDrQfDBxrAg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_qmTIgjA-EeyJDrQfDBxrAg" fontName="Segoe UI"/>
+          <styles xmi:type="notation:FillStyle" xmi:id="_qmTIgzA-EeyJDrQfDBxrAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qmTIhDA-EeyJDrQfDBxrAg"/>
+        </children>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_RWl0RDA9EeyJDrQfDBxrAg"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_RWl0RTA9EeyJDrQfDBxrAg"/>
+      </children>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_RWiw8TA9EeyJDrQfDBxrAg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_RWiw8jA9EeyJDrQfDBxrAg" fontName="Segoe UI"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_RWiw8zA9EeyJDrQfDBxrAg" fillColor="12516090"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWiw9DA9EeyJDrQfDBxrAg" x="110" y="135" width="186" height="276"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_MetfUDA9EeyJDrQfDBxrAg"/>
+  </notation:Diagram>
+</xmi:XMI>
