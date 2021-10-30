@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="DSMGenNHibernate"
+		                   namespace="DSMGenNHibernate.EN.DSM">
+		    
+		    
+			
+				<class name="NotificacionesEN" table="Notificaciones"> 
+				  	
+						<id name="Id" column="idNotificaciones" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="TipoNotificacion" > 
+						<column name="tipoNotificacion"  not-null="true"/>
+					</property>
+					<property name="Contenido" type="string"> 
+						<column name="contenido"  not-null="true"/>
+					</property>
+					<property name="Id_tipo" type="integer"> 
+						<column name="id_tipo"  not-null="true"/>
+					</property>
+			
+			
+			
+		  			
+						<bag name="SessionInicio" table="[notificaciones_sessionInicio]"  >
+							<key>
+								
+									<column name="FK_idNotificaciones_idNotificaciones"/> 
+							</key>
+      						<many-to-many class="DSMGenNHibernate.EN.DSM.SesionEN">
+									<column name="FK_idSesion_idSessionInicio"/> 
+      						</many-to-many>
+    					</bag>
+			
+			
+			
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="NotificacionesENReadAllHQL">from NotificacionesEN</query>
+		</hibernate-mapping>
+	

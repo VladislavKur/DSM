@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="DSMGenNHibernate"
+		                   namespace="DSMGenNHibernate.EN.DSM">
+		    
+		    
+			
+				<class name="SesionEN" table="Sesion"> 
+				  	
+						<id name="Id" column="idSesion" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Hora_inicio" type="timestamp"> 
+						<column name="hora_inicio"  not-null="true"/>
+					</property>
+					<property name="Hora_fin" type="timestamp"> 
+						<column name="hora_fin" />
+					</property>
+			
+			
+			
+		  			
+						<bag name="Usuario" >
+							<key>
+							
+								
+								<column name="FK_idSesion_idSessionInicio"/>
+					      	</key>
+							<one-to-many class="DSMGenNHibernate.EN.DSM.UsuarioEN"/>
+					    </bag>
+					
+			
+		  			
+						<bag name="Notificaciones" table="[notificaciones_sessionInicio]" inverse="true" >
+							<key>
+								
+									<column name="FK_idSesion_idSessionInicio"/> 
+							</key>
+      						<many-to-many class="DSMGenNHibernate.EN.DSM.NotificacionesEN">
+									<column name="FK_idNotificaciones_idNotificaciones"/> 
+      						</many-to-many>
+    					</bag>
+			
+			
+			
+		  			
+						<bag name="Usuario_0" table="[usuario_0_sesion]" inverse="true" >
+							<key>
+								
+									<column name="FK_idSesion_idSesion"/> 
+							</key>
+      						<many-to-many class="DSMGenNHibernate.EN.DSM.UsuarioEN">
+									<column name="FK_email_idUsuario_0"/> 
+      						</many-to-many>
+    					</bag>
+					
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="SesionENReadAllHQL">from SesionEN</query>
+		</hibernate-mapping>
+	

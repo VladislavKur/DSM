@@ -1,0 +1,17 @@
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\bin\Debug\hibernate.cfg.xml
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\bin\Debug\DSMGenNHibernate.dll.config
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\bin\Debug\DSMGenNHibernate.dll
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\bin\Debug\DSMGenNHibernate.pdb
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\bin\Debug\Castle.DynamicProxy2.dll
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\bin\Debug\jose-jwt.dll
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\bin\Debug\LinFu.DynamicProxy.dll
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\bin\Debug\Newtonsoft.Json.dll
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\bin\Debug\NHibernate.ByteCode.Castle.dll
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\bin\Debug\NHibernate.ByteCode.LinFu.dll
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\bin\Debug\NHibernate.dll
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\bin\Debug\Iesi.Collections.dll
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\bin\Debug\Antlr3.Runtime.dll
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\bin\Debug\log4net.dll
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\obj\Debug\DSMGenNHibernate.csproj.CoreCompileInputs.cache
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\obj\Debug\DSMGenNHibernate.dll
+C:\ooh4ria\workspaceMars\DSMGen\DSMGenNHibernate\obj\Debug\DSMGenNHibernate.pdb

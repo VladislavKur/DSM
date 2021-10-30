@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="DSMGenNHibernate"
+		                   namespace="DSMGenNHibernate.EN.DSM">
+		    
+		    
+			
+				<class name="MatchEN" table="Match"> 
+				  	
+						<id name="Id" column="idMatch" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Estado" > 
+						<column name="estado"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+		  			
+						<many-to-one name="Usuario_emisor" class="DSMGenNHibernate.EN.DSM.UsuarioEN" >	
+								<column name="FK_email_idUsuario"/> 
+						</many-to-one>
+											 					
+			
+		  			
+					
+							   <one-to-one name="Usuario_receptor" class="DSMGenNHibernate.EN.DSM.UsuarioEN" property-ref="Match_emisor" />							
+					 
+						
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="MatchENReadAllHQL">from MatchEN</query>
+		</hibernate-mapping>
+	
