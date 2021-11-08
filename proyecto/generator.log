@@ -1,0 +1,256 @@
+0    [main] INFO  eclipse.emf.mwe.core.WorkflowEngine  - --------------------------------------------------------------------------------------
+2    [main] INFO  eclipse.emf.mwe.core.WorkflowEngine  - EMF Modeling Workflow Engine 1.3.11, Build v201508030321
+2    [main] INFO  eclipse.emf.mwe.core.WorkflowEngine  - (c) 2005-2009 openarchitectureware.org and contributors
+2    [main] INFO  eclipse.emf.mwe.core.WorkflowEngine  - --------------------------------------------------------------------------------------
+2    [main] INFO  eclipse.emf.mwe.core.WorkflowEngine  - running workflow: C:/ooh4ria/workspaceMars/proyecto/templates/workflow/generator.mwe
+2    [main] INFO  eclipse.emf.mwe.core.WorkflowEngine  - 
+308  [main] INFO  lipse.emf.mwe.utils.StandaloneSetup  - Registering platform uri 'C:\ooh4ria\workspaceMars'
+1195 [main] INFO  lipse.emf.mwe.utils.StandaloneSetup  - Adding generated EPackage 'es.ua.dlsi.ooh.conceptualView.ConceptualViewPackage'
+1269 [main] INFO  lipse.emf.mwe.utils.StandaloneSetup  - Adding generated EPackage 'org.eclipse.gmf.runtime.notation.NotationPackage'
+1362 [main] INFO  e.core.container.CompositeComponent  - Workflow: executing workflow workflow::nhibernate::generator.mwe in C:/ooh4ria/workspaceMars/proyecto/templates/workflow/generator.mwe:11
+1362 [main] INFO  e.core.container.CompositeComponent  - XmiReader: file 'models/default.domainModel' => slot 'es_ua_dlsi_ooh_conceptual_model'
+1521 [main] INFO  e.core.container.CompositeComponent  - CheckComponent: slot es_ua_dlsi_ooh_conceptual_model check file(s): metamodel::Checks 
+1881 [main] INFO  e.core.container.CompositeComponent  - es.ua.dlsi.ooh.persistence.nhibernate.generator.workflowComponents.CleanBackup
+Se ha borrado el directorio backup en la ubicacion: ../proyectoGen\Backup
+1886 [main] INFO  e.core.container.CompositeComponent  - Generator(nhibernate.generator): generating 'workflow::nhibernate::workflow::main FOR true' => [../proyectoGen, CONFIGURATION:../proyectoGen(overwrite=false,append=false,fileEncoding=utf-8)]
+La licencia está en vigor. Su fecha de expiración es: Thu Aug 18 18:30:33 CEST 2022
+configuroConf:C:\Users\lucyr\AppData\Local\Temp\OOH4RIA2803465925586864331.cfg
+enc:utf-8
+2423 [main] INFO  and2.pr.ProtectedRegionResolverImpl  - Source scan started ...
+2591 [main] INFO  and2.pr.ProtectedRegionResolverImpl  - Source scan finished in 0.168s
+2591 [main] INFO  and2.pr.ProtectedRegionResolverImpl  - Files scanned: 102
+2591 [main] INFO  and2.pr.ProtectedRegionResolverImpl  - Regions found: 39
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+2969 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - UsuarioCAD
+enc:utf-8
+3078 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - MatchCAD
+LA clase origen: Match y el nombre de rol: usuario_emisor
+LA clase destino: Match y el nombre de rol: usuario_emisor
+Encontrado en: asoTarget: match_usuario El nombre de rol origen (generado): match_emisor y el nombre del rol destino:usuario_emisor
+LA clase origen: Match y el nombre de rol: usuario_emisor
+LA clase destino: Match y el nombre de rol: usuario_emisor
+Encontrado en: asoTarget: match_usuario El nombre de rol origen (generado): match_emisor y el nombre del rol destino:usuario_emisor
+LA clase origen: Match y el nombre de rol: usuario_emisor
+LA clase destino: Match y el nombre de rol: usuario_emisor
+Encontrado en: asoTarget: match_usuario El nombre de rol origen (generado): match_emisor y el nombre del rol destino:usuario_emisor
+LA clase origen: Match y el nombre de rol: usuario_receptor
+LA clase destino: Match y el nombre de rol: usuario_receptor
+DISTINTO en: asoTarget: match_usuario. El nombre del rol destino: usuario_emisor de el rol origen: usuario_receptor
+Encontrado en: asoTarget: match_usuario_2 El nombre de rol origen (generado): match_receptor y el nombre del rol destino:usuario_receptor
+LA clase origen: Match y el nombre de rol: usuario_receptor
+LA clase destino: Match y el nombre de rol: usuario_receptor
+DISTINTO en: asoTarget: match_usuario. El nombre del rol destino: usuario_emisor de el rol origen: usuario_receptor
+Encontrado en: asoTarget: match_usuario_2 El nombre de rol origen (generado): match_receptor y el nombre del rol destino:usuario_receptor
+LA clase origen: Match y el nombre de rol: usuario_receptor
+LA clase destino: Match y el nombre de rol: usuario_receptor
+DISTINTO en: asoTarget: match_usuario. El nombre del rol destino: usuario_emisor de el rol origen: usuario_receptor
+Encontrado en: asoTarget: match_usuario_2 El nombre de rol origen (generado): match_receptor y el nombre del rol destino:usuario_receptor
+enc:utf-8
+3149 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - SesionCAD
+LA clase origen: Sesion y el nombre de rol: usuario
+DISTINTO en: asoOrigin: notificacion_sesion. El nombre del rol origen: notificacion de el rol destino: usuario
+LA clase destino: Sesion y el nombre de rol: usuario
+Encontrado en: asoTarget: sesion_usuario El nombre de rol origen (generado): sesion_activa y el nombre del rol destino:usuario
+LA clase origen: Sesion y el nombre de rol: usuario
+DISTINTO en: asoOrigin: notificacion_sesion. El nombre del rol origen: notificacion de el rol destino: usuario
+LA clase destino: Sesion y el nombre de rol: usuario
+Encontrado en: asoTarget: sesion_usuario El nombre de rol origen (generado): sesion_activa y el nombre del rol destino:usuario
+LA clase origen: Sesion y el nombre de rol: usuario
+DISTINTO en: asoOrigin: notificacion_sesion. El nombre del rol origen: notificacion de el rol destino: usuario
+LA clase destino: Sesion y el nombre de rol: usuario
+Encontrado en: asoTarget: sesion_usuario El nombre de rol origen (generado): sesion_activa y el nombre del rol destino:usuario
+LA clase origen: Sesion y el nombre de rol: usuario_0
+DISTINTO en: asoOrigin: notificacion_sesion. El nombre del rol origen: notificacion de el rol destino: usuario_0
+LA clase destino: Sesion y el nombre de rol: usuario_0
+DISTINTO en: asoTarget: sesion_usuario. El nombre del rol destino: usuario de el rol origen: usuario_0
+Encontrado en: asoTarget: sesion_0_usuario_0 El nombre de rol origen (generado): sesion_terminada y el nombre del rol destino:usuario_0
+LA clase origen: Sesion y el nombre de rol: usuario_0
+DISTINTO en: asoOrigin: notificacion_sesion. El nombre del rol origen: notificacion de el rol destino: usuario_0
+LA clase destino: Sesion y el nombre de rol: usuario_0
+DISTINTO en: asoTarget: sesion_usuario. El nombre del rol destino: usuario de el rol origen: usuario_0
+Encontrado en: asoTarget: sesion_0_usuario_0 El nombre de rol origen (generado): sesion_terminada y el nombre del rol destino:usuario_0
+LA clase origen: Sesion y el nombre de rol: usuario_0
+DISTINTO en: asoOrigin: notificacion_sesion. El nombre del rol origen: notificacion de el rol destino: usuario_0
+LA clase destino: Sesion y el nombre de rol: usuario_0
+DISTINTO en: asoTarget: sesion_usuario. El nombre del rol destino: usuario de el rol origen: usuario_0
+Encontrado en: asoTarget: sesion_0_usuario_0 El nombre de rol origen (generado): sesion_terminada y el nombre del rol destino:usuario_0
+enc:utf-8
+3219 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - MensajeCAD
+LA clase origen: Mensaje y el nombre de rol: usuario_emisor
+Encontrado en: asoOrigin: usuario_mensaje. El nombre del rol origen: usuario_emisor y el nombre de rol destino: mensaje_receptor
+LA clase origen: Mensaje y el nombre de rol: usuario_emisor
+Encontrado en: asoOrigin: usuario_mensaje. El nombre del rol origen: usuario_emisor y el nombre de rol destino: mensaje_receptor
+LA clase origen: Mensaje y el nombre de rol: usuario_emisor
+Encontrado en: asoOrigin: usuario_mensaje. El nombre del rol origen: usuario_emisor y el nombre de rol destino: mensaje_receptor
+LA clase origen: Mensaje y el nombre de rol: usuario_emisor
+Encontrado en: asoOrigin: usuario_mensaje. El nombre del rol origen: usuario_emisor y el nombre de rol destino: mensaje_receptor
+LA clase origen: Mensaje y el nombre de rol: usuario_emisor
+Encontrado en: asoOrigin: usuario_mensaje. El nombre del rol origen: usuario_emisor y el nombre de rol destino: mensaje_receptor
+LA clase origen: Mensaje y el nombre de rol: usuario_emisor
+Encontrado en: asoOrigin: usuario_mensaje. El nombre del rol origen: usuario_emisor y el nombre de rol destino: mensaje_receptor
+LA clase origen: Mensaje y el nombre de rol: usuario_receptor
+DISTINTO en: asoOrigin: usuario_mensaje. El nombre del rol origen: usuario_emisor de el rol destino: usuario_receptor
+Encontrado en: asoOrigin: usuario_0_mensaje_0. El nombre del rol origen: usuario_receptor y el nombre de rol destino: mensaje_emisor
+LA clase origen: Mensaje y el nombre de rol: usuario_receptor
+DISTINTO en: asoOrigin: usuario_mensaje. El nombre del rol origen: usuario_emisor de el rol destino: usuario_receptor
+Encontrado en: asoOrigin: usuario_0_mensaje_0. El nombre del rol origen: usuario_receptor y el nombre de rol destino: mensaje_emisor
+LA clase origen: Mensaje y el nombre de rol: usuario_receptor
+DISTINTO en: asoOrigin: usuario_mensaje. El nombre del rol origen: usuario_emisor de el rol destino: usuario_receptor
+Encontrado en: asoOrigin: usuario_0_mensaje_0. El nombre del rol origen: usuario_receptor y el nombre de rol destino: mensaje_emisor
+LA clase origen: Mensaje y el nombre de rol: usuario_receptor
+DISTINTO en: asoOrigin: usuario_mensaje. El nombre del rol origen: usuario_emisor de el rol destino: usuario_receptor
+Encontrado en: asoOrigin: usuario_0_mensaje_0. El nombre del rol origen: usuario_receptor y el nombre de rol destino: mensaje_emisor
+LA clase origen: Mensaje y el nombre de rol: usuario_receptor
+DISTINTO en: asoOrigin: usuario_mensaje. El nombre del rol origen: usuario_emisor de el rol destino: usuario_receptor
+Encontrado en: asoOrigin: usuario_0_mensaje_0. El nombre del rol origen: usuario_receptor y el nombre de rol destino: mensaje_emisor
+LA clase origen: Mensaje y el nombre de rol: usuario_receptor
+DISTINTO en: asoOrigin: usuario_mensaje. El nombre del rol origen: usuario_emisor de el rol destino: usuario_receptor
+Encontrado en: asoOrigin: usuario_0_mensaje_0. El nombre del rol origen: usuario_receptor y el nombre de rol destino: mensaje_emisor
+enc:utf-8
+3295 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - PremiumCAD
+enc:utf-8
+3353 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - NotificacionCAD
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+3805 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - UsuarioCEN
+enc:utf-8
+3857 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - MatchCEN
+enc:utf-8
+3903 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - SesionCEN
+enc:utf-8
+3956 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - MensajeCEN
+enc:utf-8
+4004 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - PremiumCEN
+enc:utf-8
+4054 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - NotificacionCEN
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+4658 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@4c178a76 (name: login, visibility: Public, operationType: Login, description: null, type: String, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4658 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@d35dea7 (name: new, visibility: Public, operationType: New, description: null, type: Object, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: false, customized: true, paging: false, customizedTransaction: false)
+4659 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@38afe297 (name: modify, visibility: Public, operationType: Modifier, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4659 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@3d34d211 (name: destroy, visibility: Public, operationType: Destroy, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4659 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@4009e306 (name: readOID, visibility: Public, operationType: ReadOID, description: null, type: Object, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4659 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@587e5365 (name: readAll, visibility: Public, operationType: ReadAll, description: null, type: Object, collectionType: List, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4659 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@22fcf7ab (name: filtroDefecto, visibility: Public, operationType: ReadFilter, description: null, type: Object, collectionType: List, isStatic: false, isOrdered: false, filter: FROM UsuarioEN , precondition: null, body: null, postcondition: null, automaticSynchronize: false, customized: false, paging: false, customizedTransaction: false)
+4659 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@2de23121 (name: filtroBusqueda, visibility: Public, operationType: ReadFilter, description: null, type: Object, collectionType: List, isStatic: false, isOrdered: false, filter: FROM UsuarioEN, precondition: null, body: null, postcondition: null, automaticSynchronize: false, customized: false, paging: false, customizedTransaction: false)
+4659 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@63475ace (name: logout, visibility: Public, operationType: Custom, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4659 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@c0c2f8d (name: asignarPremium, visibility: Public, operationType: Relationer, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: true, paging: false, customizedTransaction: false)
+4659 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@66d18979 (name: incrementaLikes, visibility: Public, operationType: Custom, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4659 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@609cd4d8 (name: decrementaLikes, visibility: Public, operationType: Custom, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4659 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@7d8704ef (name: addUsuario, visibility: Public, operationType: CustomTransaction, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+enc:utf-8
+4699 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@3c3d9b6b (name: desasignarPremium, visibility: Public, operationType: Unrelationer, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4700 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@1e66f1f5 (name: enviarMensaje, visibility: Public, operationType: Custom, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4700 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@7530ad9c (name: mardarRecomendacion, visibility: Public, operationType: Custom, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4700 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@71e9ddb4 (name: editarPerfil, visibility: Public, operationType: Custom, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4700 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@6a2f6f80 (name: calcularEdad, visibility: Public, operationType: Custom, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4700 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@399c4be1 (name: editarPerfil2, visibility: Public, operationType: Modifier, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: false, customized: true, paging: false, customizedTransaction: false)
+4700 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@1e178745 (name: filtroMatch, visibility: Public, operationType: ReadFilter, description: null, type: Object, collectionType: List, isStatic: false, isOrdered: false, filter: FROM UsuarioEN, precondition: null, body: null, postcondition: null, automaticSynchronize: false, customized: false, paging: false, customizedTransaction: false)
+4700 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@192c3f1e (name: dameUsuariosPremium, visibility: Public, operationType: ReadFilter, description: null, type: Object, collectionType: List, isStatic: false, isOrdered: false, filter: FROM UsuarioEN WHERE EsPremium = True, precondition: null, body: null, postcondition: null, automaticSynchronize: false, customized: false, paging: false, customizedTransaction: false)
+4700 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@26b3fd41 (name: damePorOrientacion, visibility: Public, operationType: ReadFilter, description: null, type: Object, collectionType: List, isStatic: false, isOrdered: false, filter: FROM UsuarioEN WHERE Orientacion_sexual = :p_orientacion, precondition: null, body: null, postcondition: null, automaticSynchronize: false, customized: false, paging: false, customizedTransaction: false)
+4700 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@561b6512 (name: damePorEdad, visibility: Public, operationType: ReadFilter, description: null, type: Object, collectionType: List, isStatic: false, isOrdered: false, filter: FROM UsuarioEN WHERE Edad >= :p_edad_min and Edad <= :p_edad_max, precondition: null, body: null, postcondition: null, automaticSynchronize: false, customized: false, paging: false, customizedTransaction: false)
+4700 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@445b295b (name: damePorGenero, visibility: Public, operationType: ReadFilter, description: null, type: Object, collectionType: List, isStatic: false, isOrdered: false, filter: FROM UsuarioEN WHERE Genero = :p_genero, precondition: null, body: null, postcondition: null, automaticSynchronize: false, customized: false, paging: false, customizedTransaction: false)
+enc:utf-8
+4740 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@7a675056 (name: new, visibility: Public, operationType: New, description: null, type: Object, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: true)
+enc:utf-8
+4784 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@683dbc2c (name: modify, visibility: Public, operationType: Modifier, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4784 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@6ff29830 (name: destroy, visibility: Public, operationType: Destroy, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4784 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@313b2ea6 (name: readOID, visibility: Public, operationType: ReadOID, description: null, type: Object, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4784 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@548e6d58 (name: readAll, visibility: Public, operationType: ReadAll, description: null, type: Object, collectionType: List, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4784 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@623a8092 (name: hacerMatch, visibility: Public, operationType: CustomTransaction, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+enc:utf-8
+enc:utf-8
+4865 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@11fc564b (name: new, visibility: Public, operationType: New, description: null, type: Object, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4865 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@fa36558 (name: modify, visibility: Public, operationType: Modifier, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4866 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@3f56875e (name: destroy, visibility: Public, operationType: Destroy, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4866 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@fd07cbb (name: readOID, visibility: Public, operationType: ReadOID, description: null, type: Object, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4866 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@3e96bacf (name: readAll, visibility: Public, operationType: ReadAll, description: null, type: Object, collectionType: List, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4866 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@484970b0 (name: cerrarSesion, visibility: Public, operationType: Custom, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+enc:utf-8
+4906 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@1018bde2 (name: new, visibility: Public, operationType: New, description: null, type: Object, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: true)
+enc:utf-8
+4947 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@2a266d09 (name: modify, visibility: Public, operationType: Modifier, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4947 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@45ca843 (name: destroy, visibility: Public, operationType: Destroy, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4947 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@757acd7b (name: readOID, visibility: Public, operationType: ReadOID, description: null, type: Object, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4948 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@574b560f (name: readAll, visibility: Public, operationType: ReadAll, description: null, type: Object, collectionType: List, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+enc:utf-8
+4989 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@236e3f4e (name: new, visibility: Public, operationType: New, description: null, type: Object, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4989 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@69fb6037 (name: modify, visibility: Public, operationType: Modifier, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4989 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@609db43b (name: destroy, visibility: Public, operationType: Destroy, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4989 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@1356d4d4 (name: readOID, visibility: Public, operationType: ReadOID, description: null, type: Object, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+4990 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@1329eff (name: readAll, visibility: Public, operationType: ReadAll, description: null, type: Object, collectionType: List, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+enc:utf-8
+5028 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@6f27a732 (name: new, visibility: Public, operationType: New, description: null, type: Object, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+5029 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@f381794 (name: modify, visibility: Public, operationType: Modifier, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+5029 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@2e1d27ba (name: destroy, visibility: Public, operationType: Destroy, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+5029 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@2525ff7e (name: readOID, visibility: Public, operationType: ReadOID, description: null, type: Object, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+5029 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@152aa092 (name: readAll, visibility: Public, operationType: ReadAll, description: null, type: Object, collectionType: List, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+5029 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - es.ua.dlsi.ooh.conceptualView.impl.OperationImpl@44a7bfbc (name: asignarSesion, visibility: Public, operationType: Relationer, description: null, type: Void, collectionType: None, isStatic: false, isOrdered: false, filter: null, precondition: null, body: null, postcondition: null, automaticSynchronize: true, customized: false, paging: false, customizedTransaction: false)
+enc:utf-8
+5076 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - UsuarioEN
+enc:utf-8
+5134 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - MatchEN
+enc:utf-8
+5177 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - SesionEN
+enc:utf-8
+5224 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - MensajeEN
+enc:utf-8
+5269 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - PremiumEN
+enc:utf-8
+5317 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - NotificacionEN
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+enc:utf-8
+5619 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - EN
+5623 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - EN
+5625 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - EN
+5626 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - EN
+5628 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - EN
+5630 [main] INFO  ipse.xtend.util.stdlib.IOExtensions  - EN
+enc:utf-8
+enc:utf-8
+5721 [main] INFO         org.eclipse.xpand2.Generator  - Written 5 files to outlet [default](../proyectoGen)
+5721 [main] INFO         org.eclipse.xpand2.Generator  - Skipped writing of 73 files to outlet [default](../proyectoGen)
+5721 [main] INFO  e.core.container.CompositeComponent  - es.ua.dlsi.ooh.persistence.nhibernate.generator.workflowComponents.CreateSolution
+5728 [main] INFO  e.core.container.CompositeComponent  - es.ua.dlsi.ooh.persistence.nhibernate.generator.workflowComponents.UpdateSolution
+5741 [main] INFO  e.core.container.CompositeComponent  - es.ua.dlsi.ooh.persistence.nhibernate.generator.workflowComponents.CopyDLLs
+../proyectoGen\proyectoGenNHibernate\AppLib\Antlr3.Runtime.dll
+../proyectoGen\proyectoGenNHibernate\AppLib\Castle.DynamicProxy2.dll
+../proyectoGen\proyectoGenNHibernate\AppLib\Iesi.Collections.dll
+../proyectoGen\proyectoGenNHibernate\AppLib\jose-jwt.dll
+../proyectoGen\proyectoGenNHibernate\AppLib\LinFu.DynamicProxy.dll
+../proyectoGen\proyectoGenNHibernate\AppLib\log4net.dll
+../proyectoGen\proyectoGenNHibernate\AppLib\Newtonsoft.Json.dll
+../proyectoGen\proyectoGenNHibernate\AppLib\NHibernate.ByteCode.Castle.dll
+../proyectoGen\proyectoGenNHibernate\AppLib\NHibernate.ByteCode.LinFu.dll
+../proyectoGen\proyectoGenNHibernate\AppLib\NHibernate.dll
+../proyectoGen\proyectoGenNHibernate\AppLib\nunit.core.dll
+../proyectoGen\proyectoGenNHibernate\AppLib\nunit.framework.dll
+5754 [main] INFO  eclipse.emf.mwe.core.WorkflowEngine  - workflow completed in 4393ms!

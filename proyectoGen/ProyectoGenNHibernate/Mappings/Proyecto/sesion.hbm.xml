@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoGenNHibernate"
+		                   namespace="ProyectoGenNHibernate.EN.Proyecto">
+		    
+		    
+			
+				<class name="SesionEN" table="Sesion"> 
+				  	
+						<id name="Id" column="idSesion" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Hora_inicio" type="timestamp"> 
+						<column name="hora_inicio"  not-null="true"/>
+					</property>
+					<property name="Hora_fin" type="timestamp"> 
+						<column name="hora_fin" />
+					</property>
+			
+			
+			
+			
+			
+		  			
+					
+							   <one-to-one name="Usuario" class="ProyectoGenNHibernate.EN.Proyecto.UsuarioEN" property-ref="Sesion_activa" />							
+					 
+						
+			
+		  			
+						<many-to-one name="Usuario_0" class="ProyectoGenNHibernate.EN.Proyecto.UsuarioEN" >	
+								<column name="FK_emailUsuario_idUsuario_0"/> 
+						</many-to-one>
+											 					
+			
+		  			
+						<bag name="Notificacion" >
+							<key>
+							
+								
+								<column name="FK_idSesion_idSesion"/>
+					      	</key>
+							<one-to-many class="ProyectoGenNHibernate.EN.Proyecto.NotificacionEN"/>
+					    </bag>
+					
+					
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="SesionENReadAllHQL">from SesionEN</query>
+		</hibernate-mapping>
+	

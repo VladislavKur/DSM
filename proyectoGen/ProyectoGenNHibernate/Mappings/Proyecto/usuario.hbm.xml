@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoGenNHibernate"
+		                   namespace="ProyectoGenNHibernate.EN.Proyecto">
+		    
+		    
+			
+				<class name="UsuarioEN" table="Usuario"> 
+						<id name="Email" column="emailUsuario"/> 
+			
+					
+					<property name="Pass" type="string"> 
+						<column name="pass"  not-null="true"/>
+					</property>
+					<property name="Nickname" type="string"> 
+						<column name="nickname"  not-null="true"/>
+					</property>
+					<property name="Nombre" type="string"> 
+						<column name="nombre"  not-null="true"/>
+					</property>
+					<property name="Apellidos" type="string"> 
+						<column name="apellidos"  not-null="true"/>
+					</property>
+					<property name="Fecha_nacimiento" type="date"> 
+						<column name="fecha_nacimiento"  not-null="true"/>
+					</property>
+					<property name="Orientacion_sexual" > 
+						<column name="orientacion_sexual"  not-null="true"/>
+					</property>
+					<property name="Genero" > 
+						<column name="genero"  not-null="true"/>
+					</property>
+					<property name="Fecha_registro" type="date"> 
+						<column name="fecha_registro"  not-null="true"/>
+					</property>
+					<property name="Like_counter" type="integer"> 
+						<column name="like_counter"  not-null="true"/>
+					</property>
+					<property name="Edad" type="integer"> 
+						<column name="edad" />
+					</property>
+					<property name="EsPremium" type="boolean"> 
+						<column name="esPremium"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		  			
+						<bag name="Match_emisor" >
+							<key>
+							
+								
+								<column name="FK_emailUsuario_idUsuario"/>
+					      	</key>
+							<one-to-many class="ProyectoGenNHibernate.EN.Proyecto.MatchEN"/>
+					    </bag>
+					
+			
+		  			
+						<bag name="Match_receptor" >
+							<key>
+							
+								
+								<column name="FK_emailUsuario_idUsuario"/>
+					      	</key>
+							<one-to-many class="ProyectoGenNHibernate.EN.Proyecto.MatchEN"/>
+					    </bag>
+					
+			
+		  			
+						<bag name="Mensaje_receptor" >
+							<key>
+							
+								
+								<column name="FK_emailUsuario_idUsuario"/>
+					      	</key>
+							<one-to-many class="ProyectoGenNHibernate.EN.Proyecto.MensajeEN"/>
+					    </bag>
+					
+			
+		  			
+						<bag name="Mensaje_emisor" >
+							<key>
+							
+								
+								<column name="FK_emailUsuario_idUsuario_0"/>
+					      	</key>
+							<one-to-many class="ProyectoGenNHibernate.EN.Proyecto.MensajeEN"/>
+					    </bag>
+					
+			
+		  			
+					
+							   <one-to-one name="Premium" class="ProyectoGenNHibernate.EN.Proyecto.PremiumEN" property-ref="Usuario" />							
+					 
+						
+			
+		  			
+					
+							<many-to-one name="Sesion_activa" class="ProyectoGenNHibernate.EN.Proyecto.SesionEN" >
+								<column name="FK_idSesion_idSesion"/> 
+        					</many-to-one>
+					 
+						
+			
+		  			
+						<bag name="Sesion_terminada" >
+							<key>
+							
+								
+								<column name="FK_emailUsuario_idUsuario_0"/>
+					      	</key>
+							<one-to-many class="ProyectoGenNHibernate.EN.Proyecto.SesionEN"/>
+					    </bag>
+					
+			
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="UsuarioENReadAllHQL">from UsuarioEN</query>
+		  <query name="UsuarioENfiltroDefectoHQL"><![CDATA[FROM UsuarioEN ]]></query>
+		  <query name="UsuarioENfiltroBusquedaHQL"><![CDATA[FROM UsuarioEN]]></query>
+		  <query name="UsuarioENfiltroMatchHQL"><![CDATA[FROM UsuarioEN]]></query>
+		  <query name="UsuarioENdameUsuariosPremiumHQL"><![CDATA[FROM UsuarioEN WHERE EsPremium = True]]></query>
+		  <query name="UsuarioENdamePorOrientacionHQL"><![CDATA[FROM UsuarioEN WHERE Orientacion_sexual = :p_orientacion]]></query>
+		  <query name="UsuarioENdamePorEdadHQL"><![CDATA[FROM UsuarioEN WHERE Edad >= :p_edad_min and Edad <= :p_edad_max]]></query>
+		  <query name="UsuarioENdamePorGeneroHQL"><![CDATA[FROM UsuarioEN WHERE Genero = :p_genero]]></query>
+		</hibernate-mapping>
+	

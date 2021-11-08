@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoGenNHibernate"
+		                   namespace="ProyectoGenNHibernate.EN.Proyecto">
+		    
+		    
+			
+				<class name="NotificacionEN" table="Notificacion"> 
+				  	
+						<id name="Id" column="idNotificacion" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Tipo" > 
+						<column name="tipo" />
+					</property>
+					<property name="Contenido" type="string"> 
+						<column name="contenido"  not-null="true"/>
+					</property>
+					<property name="Id_tipo" type="string"> 
+						<column name="id_tipo" />
+					</property>
+			
+			
+			
+			
+			
+			
+		  			
+						<many-to-one name="Sesion" class="ProyectoGenNHibernate.EN.Proyecto.SesionEN" >	
+								<column name="FK_idSesion_idSesion"/> 
+						</many-to-one>
+											 					
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="NotificacionENReadAllHQL">from NotificacionEN</query>
+		</hibernate-mapping>
+	
