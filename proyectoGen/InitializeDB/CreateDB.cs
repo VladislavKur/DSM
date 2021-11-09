@@ -82,7 +82,7 @@ public static void InitializeData ()
 
                 UsuarioCEN usuarioCEN = new UsuarioCEN ();
 
-                string idUsu = usuarioCEN.New_ ("1234", "hola@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (2001, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 0);
+                int idUsu = usuarioCEN.New_ ("1234", "hola@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (2001, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 0);
 
                 //vamos a decrementar en un usuario que no tiene likes debe saltar error
                 Console.WriteLine ("Vamos a decrementar los likes del usuario (debe dar error)");
@@ -100,7 +100,7 @@ public static void InitializeData ()
                 Console.WriteLine ("El usuario1 ha dado like " + usuEN.Like_counter + " veces");
                 //Ahora decrementa cuando si puede hacerlo
                 Console.WriteLine ("Vamos a decrementar los likes del usuario2 (no debe dar error)");
-                string idUsu2 = usuarioCEN.New_ ("1234", "tanga@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (2001, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 5);
+                int idUsu2 = usuarioCEN.New_ ("1234", "tanga@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (2001, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 5);
                 usuarioCEN.CalcularEdad (idUsu2);
                 UsuarioEN usuEN2 = new UsuarioCAD ().ReadOIDDefault (idUsu2);
                 Console.WriteLine ("El usuario2 ha dado like " + usuEN2.Like_counter + " veces");
@@ -184,13 +184,13 @@ public static void InitializeData ()
                 SesionCEN sesCEN = new SesionCEN ();
                 DateTime dateNow = DateTime.Now;
                 //int idSes = sesCEN.New_ (new DateTime (dateNow.Year, dateNow.Month, dateNow.Day, 4, 5, 6), idUsu, idUsu);
-                int idSes = sesCEN.New_(DateTime.Now, idUsu, idUsu);
+                int idSes = sesCEN.New_ (DateTime.Now, idUsu);
                 SesionEN sesEN = new SesionCAD ().ReadOIDDefault (idSes);
                 Console.WriteLine ("hora de fin antes " + sesEN.Hora_fin);
 
                 try
                 {
-                        sesCEN.CerrarSesion (idSes);
+                        //sesCEN.CerrarSesion (idSes);
                 }
                 catch (Exception e)
                 {
@@ -201,7 +201,7 @@ public static void InitializeData ()
                 sesEN = new SesionCAD ().ReadOIDDefault (idSes);
                 Console.WriteLine ("hora de fin despues " + sesEN.Hora_fin);
                 PremiumCEN premiumCEN = new PremiumCEN ();
-                int idPrem = premiumCEN.New_ (9.99, EstadoCompraEnum.realizado, DateTime.Now, new DateTime (2021, 12, 11));
+                int idPrem = premiumCEN.New_ (9.99, EstadoCompraEnum.realizado, DateTime.Now);
 
 
                 usuarioCEN.AsignarPremium (idUsu, idPrem);
@@ -218,29 +218,28 @@ public static void InitializeData ()
                         Console.WriteLine ("Usuario " + ped.Email);
                 }
 
-                IList<UsuarioEN> listaUsuarioEdad = usuarioCEN.DamePorEdad (10, 20);
+
+                IList<UsuarioEN> listaUsuarioDefecto = null;
+
+                listaUsuarioDefecto = usuarioCEN.FiltroDefecto (OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer);
 
 
-                Console.WriteLine ("Lista de usuarios con edad entre 10 y 20");
-                foreach (UsuarioEN ped in listaUsuarioEdad) {
-                        Console.WriteLine ("Usuario " + ped.Email + ": " + ped.Edad);
+
+                Console.WriteLine ("\n");
+                Console.WriteLine ("Lista de mujeres bisexuales");
+                foreach (UsuarioEN ped in listaUsuarioDefecto) {
+                        Console.WriteLine ("Usuario " + ped.Orientacion_sexual + ": " + ped.Genero);
                 }
 
-                IList<UsuarioEN> listaUsuarioGenero = usuarioCEN.DamePorGenero (GeneroUsuarioEnum.mujer);
+                IList<UsuarioEN> listaUsuarioBusqueda = usuarioCEN.FiltroBusqueda (null, GeneroUsuarioEnum.mujer, 19, 20);
 
 
-                Console.WriteLine ("Lista de usuarios con genero mujer");
-                foreach (UsuarioEN ped in listaUsuarioGenero) {
-                        Console.WriteLine ("Usuario " + ped.Email + ": " + ped.Genero);
+                Console.WriteLine ("Lista de usuarios mujer con edad entre 19 y 20");
+                foreach (UsuarioEN ped in listaUsuarioBusqueda) {
+                        Console.WriteLine ("Usuario " + ped.Email + ": " + ped.Genero + ", " + ped.Edad + ", " + ped.Orientacion_sexual);
                 }
 
-                IList<UsuarioEN> listaUsuarioOrientacion = usuarioCEN.DamePorOrientacion (OrientacionSexualEnum.bisexual);
 
-
-                Console.WriteLine ("Lista de usuarios con orientacion sexual bisexual");
-                foreach (UsuarioEN ped in listaUsuarioOrientacion) {
-                        Console.WriteLine ("Usuario " + ped.Email + ": " + ped.Orientacion_sexual);
-                }
 
                 /*PROTECTED REGION END*/
         }

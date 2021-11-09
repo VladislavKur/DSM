@@ -121,14 +121,14 @@ public int New_ (MatchEN match)
                 SessionInitializeTransaction ();
                 if (match.Usuario_emisor != null) {
                         // Argumento OID y no colección.
-                        match.Usuario_emisor = (ProyectoGenNHibernate.EN.Proyecto.UsuarioEN)session.Load (typeof(ProyectoGenNHibernate.EN.Proyecto.UsuarioEN), match.Usuario_emisor.Email);
+                        match.Usuario_emisor = (ProyectoGenNHibernate.EN.Proyecto.UsuarioEN)session.Load (typeof(ProyectoGenNHibernate.EN.Proyecto.UsuarioEN), match.Usuario_emisor.Id);
 
                         match.Usuario_emisor.Match_emisor
                         .Add (match);
                 }
                 if (match.Usuario_receptor != null) {
                         // Argumento OID y no colección.
-                        match.Usuario_receptor = (ProyectoGenNHibernate.EN.Proyecto.UsuarioEN)session.Load (typeof(ProyectoGenNHibernate.EN.Proyecto.UsuarioEN), match.Usuario_receptor.Email);
+                        match.Usuario_receptor = (ProyectoGenNHibernate.EN.Proyecto.UsuarioEN)session.Load (typeof(ProyectoGenNHibernate.EN.Proyecto.UsuarioEN), match.Usuario_receptor.Id);
 
                         match.Usuario_receptor.Match_receptor
                         .Add (match);

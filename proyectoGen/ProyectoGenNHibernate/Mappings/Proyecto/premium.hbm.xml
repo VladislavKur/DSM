@@ -34,7 +34,7 @@
 		  			
 					
 							<many-to-one name="Usuario" class="ProyectoGenNHibernate.EN.Proyecto.UsuarioEN" >
-								<column name="FK_emailUsuario_idUsuario"/> 
+								<column name="FK_idUsuario_idUsuario"/> 
         					</many-to-one>
 					 
 						

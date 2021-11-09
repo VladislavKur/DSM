@@ -19,7 +19,7 @@ namespace ProyectoGenNHibernate.CEN.Proyecto
 {
 public partial class UsuarioCEN
 {
-public void CalcularEdad (string p_oid)
+public void CalcularEdad (int p_oid)
 {
         /*PROTECTED REGION ID(ProyectoGenNHibernate.CEN.Proyecto_Usuario_calcularEdad) ENABLED START*/
 

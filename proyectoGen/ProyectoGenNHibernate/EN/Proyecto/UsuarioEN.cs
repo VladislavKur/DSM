@@ -138,6 +138,13 @@ private bool esPremium;
 
 
 
+/**
+ *	Atributo id
+ */
+private int id;
+
+
+
 
 
 
@@ -255,6 +262,12 @@ public virtual bool EsPremium {
 
 
 
+public virtual int Id {
+        get { return id; } set { id = value;  }
+}
+
+
+
 
 
 public UsuarioEN()
@@ -268,25 +281,27 @@ public UsuarioEN()
 
 
 
-public UsuarioEN(string email, String pass, string nickname, string nombre, string apellidos, Nullable<DateTime> fecha_nacimiento, ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum orientacion_sexual, ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum genero, Nullable<DateTime> fecha_registro, int like_counter, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MatchEN> match_emisor, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MatchEN> match_receptor, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MensajeEN> mensaje_receptor, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MensajeEN> mensaje_emisor, ProyectoGenNHibernate.EN.Proyecto.PremiumEN premium, ProyectoGenNHibernate.EN.Proyecto.SesionEN sesion_activa, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.SesionEN> sesion_terminada, int edad, bool esPremium
+public UsuarioEN(int id, String pass, string email, string nickname, string nombre, string apellidos, Nullable<DateTime> fecha_nacimiento, ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum orientacion_sexual, ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum genero, Nullable<DateTime> fecha_registro, int like_counter, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MatchEN> match_emisor, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MatchEN> match_receptor, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MensajeEN> mensaje_receptor, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MensajeEN> mensaje_emisor, ProyectoGenNHibernate.EN.Proyecto.PremiumEN premium, ProyectoGenNHibernate.EN.Proyecto.SesionEN sesion_activa, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.SesionEN> sesion_terminada, int edad, bool esPremium
                  )
 {
-        this.init (Email, pass, nickname, nombre, apellidos, fecha_nacimiento, orientacion_sexual, genero, fecha_registro, like_counter, match_emisor, match_receptor, mensaje_receptor, mensaje_emisor, premium, sesion_activa, sesion_terminada, edad, esPremium);
+        this.init (Id, pass, email, nickname, nombre, apellidos, fecha_nacimiento, orientacion_sexual, genero, fecha_registro, like_counter, match_emisor, match_receptor, mensaje_receptor, mensaje_emisor, premium, sesion_activa, sesion_terminada, edad, esPremium);
 }
 
 
 public UsuarioEN(UsuarioEN usuario)
 {
-        this.init (Email, usuario.Pass, usuario.Nickname, usuario.Nombre, usuario.Apellidos, usuario.Fecha_nacimiento, usuario.Orientacion_sexual, usuario.Genero, usuario.Fecha_registro, usuario.Like_counter, usuario.Match_emisor, usuario.Match_receptor, usuario.Mensaje_receptor, usuario.Mensaje_emisor, usuario.Premium, usuario.Sesion_activa, usuario.Sesion_terminada, usuario.Edad, usuario.EsPremium);
+        this.init (Id, usuario.Pass, usuario.Email, usuario.Nickname, usuario.Nombre, usuario.Apellidos, usuario.Fecha_nacimiento, usuario.Orientacion_sexual, usuario.Genero, usuario.Fecha_registro, usuario.Like_counter, usuario.Match_emisor, usuario.Match_receptor, usuario.Mensaje_receptor, usuario.Mensaje_emisor, usuario.Premium, usuario.Sesion_activa, usuario.Sesion_terminada, usuario.Edad, usuario.EsPremium);
 }
 
-private void init (string email
-                   , String pass, string nickname, string nombre, string apellidos, Nullable<DateTime> fecha_nacimiento, ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum orientacion_sexual, ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum genero, Nullable<DateTime> fecha_registro, int like_counter, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MatchEN> match_emisor, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MatchEN> match_receptor, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MensajeEN> mensaje_receptor, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MensajeEN> mensaje_emisor, ProyectoGenNHibernate.EN.Proyecto.PremiumEN premium, ProyectoGenNHibernate.EN.Proyecto.SesionEN sesion_activa, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.SesionEN> sesion_terminada, int edad, bool esPremium)
+private void init (int id
+                   , String pass, string email, string nickname, string nombre, string apellidos, Nullable<DateTime> fecha_nacimiento, ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum orientacion_sexual, ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum genero, Nullable<DateTime> fecha_registro, int like_counter, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MatchEN> match_emisor, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MatchEN> match_receptor, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MensajeEN> mensaje_receptor, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.MensajeEN> mensaje_emisor, ProyectoGenNHibernate.EN.Proyecto.PremiumEN premium, ProyectoGenNHibernate.EN.Proyecto.SesionEN sesion_activa, System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.SesionEN> sesion_terminada, int edad, bool esPremium)
 {
-        this.Email = email;
+        this.Id = id;
 
 
         this.Pass = pass;
+
+        this.Email = email;
 
         this.Nickname = nickname;
 
@@ -330,7 +345,7 @@ public override bool Equals (object obj)
         UsuarioEN t = obj as UsuarioEN;
         if (t == null)
                 return false;
-        if (Email.Equals (t.Email))
+        if (Id.Equals (t.Id))
                 return true;
         else
                 return false;
@@ -340,7 +355,7 @@ public override int GetHashCode ()
 {
         int hash = 13;
 
-        hash += this.Email.GetHashCode ();
+        hash += this.Id.GetHashCode ();
         return hash;
 }
 }

@@ -19,7 +19,7 @@ namespace ProyectoGenNHibernate.CEN.Proyecto
 {
 public partial class UsuarioCEN
 {
-public void EditarPerfil (string p_oid, string p_nickname, string p_nombre, string p_apellidos, Nullable<DateTime> p_fecha_nacimiento, ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum p_orientacion_sexual, ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum p_genero, String p_pass)
+public void EditarPerfil (int p_oid, string p_nickname, string p_nombre, string p_apellidos, Nullable<DateTime> p_fecha_nacimiento, ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum p_orientacion_sexual, ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum p_genero, String p_pass)
 {
         /*PROTECTED REGION ID(ProyectoGenNHibernate.CEN.Proyecto_Usuario_editarPerfil) ENABLED START*/
 

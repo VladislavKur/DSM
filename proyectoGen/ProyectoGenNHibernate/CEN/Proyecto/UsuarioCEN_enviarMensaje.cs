@@ -19,7 +19,7 @@ namespace ProyectoGenNHibernate.CEN.Proyecto
 {
 public partial class UsuarioCEN
 {
-public void EnviarMensaje (string p_oid)
+public void EnviarMensaje (int p_oid)
 {
         /*PROTECTED REGION ID(ProyectoGenNHibernate.CEN.Proyecto_Usuario_enviarMensaje) ENABLED START*/
 

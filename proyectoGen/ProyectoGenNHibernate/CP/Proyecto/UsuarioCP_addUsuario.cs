@@ -21,7 +21,7 @@ namespace ProyectoGenNHibernate.CP.Proyecto
 {
 public partial class UsuarioCP : BasicCP
 {
-public void AddUsuario (string p_Usuario_OID, string p_Usuario_receptor_OID)
+public void AddUsuario (int p_Usuario_OID, int p_Usuario_receptor_OID)
 {
         /*PROTECTED REGION ID(ProyectoGenNHibernate.CP.Proyecto_Usuario_addUsuario) ENABLED START*/
 

@@ -19,7 +19,7 @@ namespace ProyectoGenNHibernate.CEN.Proyecto
 {
 public partial class UsuarioCEN
 {
-public void DecrementaLikes (string p_oid)
+public void DecrementaLikes (int p_oid)
 {
         /*PROTECTED REGION ID(ProyectoGenNHibernate.CEN.Proyecto_Usuario_decrementaLikes) ENABLED START*/
 

@@ -19,7 +19,7 @@ namespace ProyectoGenNHibernate.CEN.Proyecto
 {
 public partial class UsuarioCEN
 {
-public void MardarRecomendacion (string p_oid)
+public void MardarRecomendacion (int p_oid)
 {
         /*PROTECTED REGION ID(ProyectoGenNHibernate.CEN.Proyecto_Usuario_mardarRecomendacion) ENABLED START*/
 

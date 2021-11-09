@@ -125,17 +125,10 @@ public int New_ (SesionEN sesion)
                 SessionInitializeTransaction ();
                 if (sesion.Usuario != null) {
                         // Argumento OID y no colección.
-                        sesion.Usuario = (ProyectoGenNHibernate.EN.Proyecto.UsuarioEN)session.Load (typeof(ProyectoGenNHibernate.EN.Proyecto.UsuarioEN), sesion.Usuario.Email);
+                        sesion.Usuario = (ProyectoGenNHibernate.EN.Proyecto.UsuarioEN)session.Load (typeof(ProyectoGenNHibernate.EN.Proyecto.UsuarioEN), sesion.Usuario.Id);
 
                         sesion.Usuario.Sesion_activa
                                 = sesion;
-                }
-                if (sesion.Usuario_0 != null) {
-                        // Argumento OID y no colección.
-                        sesion.Usuario_0 = (ProyectoGenNHibernate.EN.Proyecto.UsuarioEN)session.Load (typeof(ProyectoGenNHibernate.EN.Proyecto.UsuarioEN), sesion.Usuario_0.Email);
-
-                        sesion.Usuario_0.Sesion_terminada
-                        .Add (sesion);
                 }
 
                 session.Save (sesion);
@@ -267,6 +260,37 @@ public System.Collections.Generic.IList<SesionEN> ReadAll (int first, int size)
         }
 
         return result;
+}
+
+public void CerrarSesion (int p_Sesion_OID, int p_usuario_0_OID)
+{
+        ProyectoGenNHibernate.EN.Proyecto.SesionEN sesionEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                sesionEN = (SesionEN)session.Load (typeof(SesionEN), p_Sesion_OID);
+                sesionEN.Usuario_0 = (ProyectoGenNHibernate.EN.Proyecto.UsuarioEN)session.Load (typeof(ProyectoGenNHibernate.EN.Proyecto.UsuarioEN), p_usuario_0_OID);
+
+                sesionEN.Usuario_0.Sesion_terminada.Add (sesionEN);
+
+
+
+                session.Update (sesionEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoGenNHibernate.Exceptions.DataLayerException ("Error in SesionCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
 }
 }
 }

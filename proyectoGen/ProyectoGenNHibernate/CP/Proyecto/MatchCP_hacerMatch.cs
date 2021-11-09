@@ -21,7 +21,7 @@ namespace ProyectoGenNHibernate.CP.Proyecto
 {
 public partial class MatchCP : BasicCP
 {
-public void HacerMatch (int p_oid, string p_oid_usuario_emisor, string p_oid_usuario_receptor)
+public void HacerMatch (int p_oid, int p_oid_usuario_emisor, int p_oid_usuario_receptor)
 {
         /*PROTECTED REGION ID(ProyectoGenNHibernate.CP.Proyecto_Match_hacerMatch) ENABLED START*/
 

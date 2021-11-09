@@ -124,14 +124,14 @@ public int New_ (MensajeEN mensaje)
                 SessionInitializeTransaction ();
                 if (mensaje.Usuario_emisor != null) {
                         // Argumento OID y no colección.
-                        mensaje.Usuario_emisor = (ProyectoGenNHibernate.EN.Proyecto.UsuarioEN)session.Load (typeof(ProyectoGenNHibernate.EN.Proyecto.UsuarioEN), mensaje.Usuario_emisor.Email);
+                        mensaje.Usuario_emisor = (ProyectoGenNHibernate.EN.Proyecto.UsuarioEN)session.Load (typeof(ProyectoGenNHibernate.EN.Proyecto.UsuarioEN), mensaje.Usuario_emisor.Id);
 
                         mensaje.Usuario_emisor.Mensaje_receptor
                         .Add (mensaje);
                 }
                 if (mensaje.Usuario_receptor != null) {
                         // Argumento OID y no colección.
-                        mensaje.Usuario_receptor = (ProyectoGenNHibernate.EN.Proyecto.UsuarioEN)session.Load (typeof(ProyectoGenNHibernate.EN.Proyecto.UsuarioEN), mensaje.Usuario_receptor.Email);
+                        mensaje.Usuario_receptor = (ProyectoGenNHibernate.EN.Proyecto.UsuarioEN)session.Load (typeof(ProyectoGenNHibernate.EN.Proyecto.UsuarioEN), mensaje.Usuario_receptor.Id);
 
                         mensaje.Usuario_receptor.Mensaje_emisor
                         .Add (mensaje);

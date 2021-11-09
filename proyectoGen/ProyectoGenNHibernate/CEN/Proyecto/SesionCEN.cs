@@ -39,7 +39,7 @@ public ISesionCAD get_ISesionCAD ()
         return this._ISesionCAD;
 }
 
-public int New_ (Nullable<DateTime> p_hora_inicio, string p_usuario, string p_usuario_0)
+public int New_ (Nullable<DateTime> p_hora_inicio, int p_usuario)
 {
         SesionEN sesionEN = null;
         int oid;
@@ -49,19 +49,11 @@ public int New_ (Nullable<DateTime> p_hora_inicio, string p_usuario, string p_us
         sesionEN.Hora_inicio = p_hora_inicio;
 
 
-        if (p_usuario != null) {
+        if (p_usuario != -1) {
                 // El argumento p_usuario -> Property usuario es oid = false
                 // Lista de oids id
                 sesionEN.Usuario = new ProyectoGenNHibernate.EN.Proyecto.UsuarioEN ();
-                sesionEN.Usuario.Email = p_usuario;
-        }
-
-
-        if (p_usuario_0 != null) {
-                // El argumento p_usuario_0 -> Property usuario_0 es oid = false
-                // Lista de oids id
-                sesionEN.Usuario_0 = new ProyectoGenNHibernate.EN.Proyecto.UsuarioEN ();
-                sesionEN.Usuario_0.Email = p_usuario_0;
+                sesionEN.Usuario.Id = p_usuario;
         }
 
         //Call to SesionCAD

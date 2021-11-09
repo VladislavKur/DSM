@@ -29,7 +29,7 @@ public UsuarioCAD(ISession sessionAux) : base (sessionAux)
 
 
 
-public UsuarioEN ReadOIDDefault (string email
+public UsuarioEN ReadOIDDefault (int id
                                  )
 {
         UsuarioEN usuarioEN = null;
@@ -37,7 +37,7 @@ public UsuarioEN ReadOIDDefault (string email
         try
         {
                 SessionInitializeTransaction ();
-                usuarioEN = (UsuarioEN)session.Get (typeof(UsuarioEN), email);
+                usuarioEN = (UsuarioEN)session.Get (typeof(UsuarioEN), id);
                 SessionCommit ();
         }
 
@@ -89,9 +89,12 @@ public void ModifyDefault (UsuarioEN usuario)
         try
         {
                 SessionInitializeTransaction ();
-                UsuarioEN usuarioEN = (UsuarioEN)session.Load (typeof(UsuarioEN), usuario.Email);
+                UsuarioEN usuarioEN = (UsuarioEN)session.Load (typeof(UsuarioEN), usuario.Id);
 
                 usuarioEN.Pass = usuario.Pass;
+
+
+                usuarioEN.Email = usuario.Email;
 
 
                 usuarioEN.Nickname = usuario.Nickname;
@@ -149,7 +152,7 @@ public void ModifyDefault (UsuarioEN usuario)
 }
 
 
-public string New_ (UsuarioEN usuario)
+public int New_ (UsuarioEN usuario)
 {
         try
         {
@@ -172,7 +175,7 @@ public string New_ (UsuarioEN usuario)
                 SessionClose ();
         }
 
-        return usuario.Email;
+        return usuario.Id;
 }
 
 public void Modify (UsuarioEN usuario)
@@ -180,9 +183,12 @@ public void Modify (UsuarioEN usuario)
         try
         {
                 SessionInitializeTransaction ();
-                UsuarioEN usuarioEN = (UsuarioEN)session.Load (typeof(UsuarioEN), usuario.Email);
+                UsuarioEN usuarioEN = (UsuarioEN)session.Load (typeof(UsuarioEN), usuario.Id);
 
                 usuarioEN.Pass = usuario.Pass;
+
+
+                usuarioEN.Email = usuario.Email;
 
 
                 usuarioEN.Nickname = usuario.Nickname;
@@ -228,13 +234,13 @@ public void Modify (UsuarioEN usuario)
                 SessionClose ();
         }
 }
-public void Destroy (string email
+public void Destroy (int id
                      )
 {
         try
         {
                 SessionInitializeTransaction ();
-                UsuarioEN usuarioEN = (UsuarioEN)session.Load (typeof(UsuarioEN), email);
+                UsuarioEN usuarioEN = (UsuarioEN)session.Load (typeof(UsuarioEN), id);
                 session.Delete (usuarioEN);
                 SessionCommit ();
         }
@@ -255,7 +261,7 @@ public void Destroy (string email
 
 //Sin e: ReadOID
 //Con e: UsuarioEN
-public UsuarioEN ReadOID (string email
+public UsuarioEN ReadOID (int id
                           )
 {
         UsuarioEN usuarioEN = null;
@@ -263,7 +269,7 @@ public UsuarioEN ReadOID (string email
         try
         {
                 SessionInitializeTransaction ();
-                usuarioEN = (UsuarioEN)session.Get (typeof(UsuarioEN), email);
+                usuarioEN = (UsuarioEN)session.Get (typeof(UsuarioEN), id);
                 SessionCommit ();
         }
 
@@ -313,15 +319,17 @@ public System.Collections.Generic.IList<UsuarioEN> ReadAll (int first, int size)
         return result;
 }
 
-public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> FiltroDefecto ()
+public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> FiltroDefecto (ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum? p_orientacion_sexual, ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum ? p_genero)
 {
         System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> result;
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM UsuarioEN self where FROM UsuarioEN ";
+                //String sql = @"FROM UsuarioEN self where FROM UsuarioEN  as usu WHERE usu.Orientacion_sexual = :p_orientacion_sexual and usu.Genero = :p_genero";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("UsuarioENfiltroDefectoHQL");
+                query.SetParameter ("p_orientacion_sexual", p_orientacion_sexual);
+                query.SetParameter ("p_genero", p_genero);
 
                 result = query.List<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN>();
                 SessionCommit ();
@@ -342,15 +350,19 @@ public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.Usuari
 
         return result;
 }
-public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> FiltroBusqueda ()
+public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> FiltroBusqueda (ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum? p_orientacion, ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum? p_genero, int? p_edad_min, int ? p_edad_max)
 {
         System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> result;
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM UsuarioEN self where FROM UsuarioEN";
+                //String sql = @"FROM UsuarioEN self where FROM UsuarioEN as usu WHERE (:p_orientacion is not null AND usu.Orientacion_sexual = :p_orientacion) OR ((:p_genero is not null AND usu.Genero = :p_genero) OR (:p_edad_min is not null AND :p_edad_max is not null) AND (usu.Edad >= :p_edad_min AND usu.Edad <= :p_edad_max))";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("UsuarioENfiltroBusquedaHQL");
+                query.SetParameter ("p_orientacion", p_orientacion);
+                query.SetParameter ("p_genero", p_genero);
+                query.SetParameter ("p_edad_min", p_edad_min);
+                query.SetParameter ("p_edad_max", p_edad_max);
 
                 result = query.List<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN>();
                 SessionCommit ();
@@ -371,7 +383,7 @@ public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.Usuari
 
         return result;
 }
-public void AsignarPremium (string p_Usuario_OID, int p_premium_OID)
+public void AsignarPremium (int p_Usuario_OID, int p_premium_OID)
 {
         ProyectoGenNHibernate.EN.Proyecto.UsuarioEN usuarioEN = null;
         try
@@ -403,7 +415,7 @@ public void AsignarPremium (string p_Usuario_OID, int p_premium_OID)
         }
 }
 
-public void DesasignarPremium (string p_Usuario_OID, int p_premium_OID)
+public void DesasignarPremium (int p_Usuario_OID, int p_premium_OID)
 {
         try
         {
@@ -441,7 +453,7 @@ public void EditarPerfil2 (UsuarioEN usuario)
         try
         {
                 SessionInitializeTransaction ();
-                UsuarioEN usuarioEN = (UsuarioEN)session.Load (typeof(UsuarioEN), usuario.Email);
+                UsuarioEN usuarioEN = (UsuarioEN)session.Load (typeof(UsuarioEN), usuario.Id);
 
                 usuarioEN.Pass = usuario.Pass;
 
@@ -480,35 +492,6 @@ public void EditarPerfil2 (UsuarioEN usuario)
                 SessionClose ();
         }
 }
-public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> FiltroMatch ()
-{
-        System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> result;
-        try
-        {
-                SessionInitializeTransaction ();
-                //String sql = @"FROM UsuarioEN self where FROM UsuarioEN";
-                //IQuery query = session.CreateQuery(sql);
-                IQuery query = (IQuery)session.GetNamedQuery ("UsuarioENfiltroMatchHQL");
-
-                result = query.List<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN>();
-                SessionCommit ();
-        }
-
-        catch (Exception ex) {
-                SessionRollBack ();
-                if (ex is ProyectoGenNHibernate.Exceptions.ModelException)
-                        throw ex;
-                throw new ProyectoGenNHibernate.Exceptions.DataLayerException ("Error in UsuarioCAD.", ex);
-        }
-
-
-        finally
-        {
-                SessionClose ();
-        }
-
-        return result;
-}
 public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> DameUsuariosPremium ()
 {
         System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> result;
@@ -538,18 +521,21 @@ public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.Usuari
 
         return result;
 }
-public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> DamePorOrientacion (ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum ? p_orientacion)
+public void AddSesionTerminada (int p_Usuario_OID, ProyectoGenNHibernate.EN.Proyecto.SesionEN sesion_a_terminar)
 {
-        System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> result;
+        ProyectoGenNHibernate.EN.Proyecto.UsuarioEN usuarioEN = null;
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM UsuarioEN self where FROM UsuarioEN WHERE Orientacion_sexual = :p_orientacion";
-                //IQuery query = session.CreateQuery(sql);
-                IQuery query = (IQuery)session.GetNamedQuery ("UsuarioENdamePorOrientacionHQL");
-                query.SetParameter ("p_orientacion", p_orientacion);
+                usuarioEN = (UsuarioEN)session.Load (typeof(UsuarioEN), p_Usuario_OID);
+                usuarioEN.Sesion_terminada = (ProyectoGenNHibernate.EN.Proyecto.SesionEN)session.Load (typeof(ProyectoGenNHibernate.EN.Proyecto.SesionEN), sesion_a_terminar);
 
-                result = query.List<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN>();
+                usuarioEN.Sesion_terminada.Usuario_0 = usuarioEN;
+
+
+
+
+                session.Update (usuarioEN);
                 SessionCommit ();
         }
 
@@ -565,69 +551,6 @@ public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.Usuari
         {
                 SessionClose ();
         }
-
-        return result;
-}
-public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> DamePorEdad (int? p_edad_min, int ? p_edad_max)
-{
-        System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> result;
-        try
-        {
-                SessionInitializeTransaction ();
-                //String sql = @"FROM UsuarioEN self where FROM UsuarioEN WHERE Edad >= :p_edad_min and Edad <= :p_edad_max";
-                //IQuery query = session.CreateQuery(sql);
-                IQuery query = (IQuery)session.GetNamedQuery ("UsuarioENdamePorEdadHQL");
-                query.SetParameter ("p_edad_min", p_edad_min);
-                query.SetParameter ("p_edad_max", p_edad_max);
-
-                result = query.List<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN>();
-                SessionCommit ();
-        }
-
-        catch (Exception ex) {
-                SessionRollBack ();
-                if (ex is ProyectoGenNHibernate.Exceptions.ModelException)
-                        throw ex;
-                throw new ProyectoGenNHibernate.Exceptions.DataLayerException ("Error in UsuarioCAD.", ex);
-        }
-
-
-        finally
-        {
-                SessionClose ();
-        }
-
-        return result;
-}
-public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> DamePorGenero (ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum ? p_genero)
-{
-        System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> result;
-        try
-        {
-                SessionInitializeTransaction ();
-                //String sql = @"FROM UsuarioEN self where FROM UsuarioEN WHERE Genero = :p_genero";
-                //IQuery query = session.CreateQuery(sql);
-                IQuery query = (IQuery)session.GetNamedQuery ("UsuarioENdamePorGeneroHQL");
-                query.SetParameter ("p_genero", p_genero);
-
-                result = query.List<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN>();
-                SessionCommit ();
-        }
-
-        catch (Exception ex) {
-                SessionRollBack ();
-                if (ex is ProyectoGenNHibernate.Exceptions.ModelException)
-                        throw ex;
-                throw new ProyectoGenNHibernate.Exceptions.DataLayerException ("Error in UsuarioCAD.", ex);
-        }
-
-
-        finally
-        {
-                SessionClose ();
-        }
-
-        return result;
 }
 }
 }

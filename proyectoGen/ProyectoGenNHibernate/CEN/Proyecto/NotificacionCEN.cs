@@ -39,21 +39,6 @@ public INotificacionCAD get_INotificacionCAD ()
         return this._INotificacionCAD;
 }
 
-public int New_ (string p_contenido)
-{
-        NotificacionEN notificacionEN = null;
-        int oid;
-
-        //Initialized NotificacionEN
-        notificacionEN = new NotificacionEN ();
-        notificacionEN.Contenido = p_contenido;
-
-        //Call to NotificacionCAD
-
-        oid = _INotificacionCAD.New_ (notificacionEN);
-        return oid;
-}
-
 public void Modify (int p_Notificacion_OID, string p_contenido)
 {
         NotificacionEN notificacionEN = null;

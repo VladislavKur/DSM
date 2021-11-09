@@ -21,13 +21,13 @@
 			
 		  			
 						<many-to-one name="Usuario_emisor" class="ProyectoGenNHibernate.EN.Proyecto.UsuarioEN" >	
-								<column name="FK_emailUsuario_idUsuario"/> 
+								<column name="FK_idUsuario_idUsuario"/> 
 						</many-to-one>
 											 					
 			
 		  			
 						<many-to-one name="Usuario_receptor" class="ProyectoGenNHibernate.EN.Proyecto.UsuarioEN" >	
-								<column name="FK_emailUsuario_idUsuario"/> 
+								<column name="FK_idUsuario_idUsuario"/> 
 						</many-to-one>
 											 					
 					

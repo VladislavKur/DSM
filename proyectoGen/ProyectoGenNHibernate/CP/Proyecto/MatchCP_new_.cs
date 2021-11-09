@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using ProyectoGenNHibernate.EN.Proyecto;
 using ProyectoGenNHibernate.CAD.Proyecto;
 using ProyectoGenNHibernate.CEN.Proyecto;
+using ProyectoGenNHibernate.Enumerated.Proyecto;
+
 
 
 
@@ -21,7 +23,7 @@ namespace ProyectoGenNHibernate.CP.Proyecto
 {
 public partial class MatchCP : BasicCP
 {
-public ProyectoGenNHibernate.EN.Proyecto.MatchEN New_ (ProyectoGenNHibernate.Enumerated.Proyecto.EstadoMatchEnum p_estado, string p_usuario_emisor, string p_usuario_receptor)
+public ProyectoGenNHibernate.EN.Proyecto.MatchEN New_ (ProyectoGenNHibernate.Enumerated.Proyecto.EstadoMatchEnum p_estado, int p_usuario_emisor, int p_usuario_receptor)
 {
         /*PROTECTED REGION ID(ProyectoGenNHibernate.CP.Proyecto_Match_new_) ENABLED START*/
 
@@ -46,19 +48,20 @@ public ProyectoGenNHibernate.EN.Proyecto.MatchEN New_ (ProyectoGenNHibernate.Enu
                 MatchEN matchEN;
                 matchEN = new MatchEN ();
                 matchEN.Estado = p_estado;
+                //matchEN.Estado = EstadoMatchEnum.pendiente;
 
 
                 //UsuarioEN usuarioEN = usuarioCAD.ReadOIDDefault (p_usuario_emisor);
 
                 if (p_usuario_emisor != null) {
                         matchEN.Usuario_emisor = new ProyectoGenNHibernate.EN.Proyecto.UsuarioEN ();
-                        matchEN.Usuario_emisor.Email = p_usuario_emisor;
+                        matchEN.Usuario_emisor.Id = p_usuario_emisor;
                 }
 
 
                 if (p_usuario_receptor != null) {
                         matchEN.Usuario_receptor = new ProyectoGenNHibernate.EN.Proyecto.UsuarioEN ();
-                        matchEN.Usuario_receptor.Email = p_usuario_receptor;
+                        matchEN.Usuario_receptor.Id = p_usuario_receptor;
                 }
 
                 //Call to MatchCAD

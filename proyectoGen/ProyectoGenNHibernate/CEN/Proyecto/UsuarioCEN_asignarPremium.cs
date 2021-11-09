@@ -19,7 +19,7 @@ namespace ProyectoGenNHibernate.CEN.Proyecto
 {
 public partial class UsuarioCEN
 {
-public void AsignarPremium (string p_Usuario_OID, int p_premium_OID)
+public void AsignarPremium (int p_Usuario_OID, int p_premium_OID)
 {
         /*PROTECTED REGION ID(ProyectoGenNHibernate.CEN.Proyecto_Usuario_asignarPremium_customized) START*/
 

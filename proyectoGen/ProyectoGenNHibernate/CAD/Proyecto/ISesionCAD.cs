@@ -29,5 +29,8 @@ SesionEN ReadOID (int id
 
 
 System.Collections.Generic.IList<SesionEN> ReadAll (int first, int size);
+
+
+void CerrarSesion (int p_Sesion_OID, int p_usuario_0_OID);
 }
 }
