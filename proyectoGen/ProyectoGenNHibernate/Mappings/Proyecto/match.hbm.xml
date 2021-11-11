@@ -38,5 +38,6 @@
 		 </class>	
 		  
 		  <query name="MatchENReadAllHQL">from MatchEN</query>
+		  <query name="MatchENfiltrarPorNombreHQL"><![CDATA[select * FROM MatchEN as ma1, UsurioEN as usu  WHERE usu.nombre like '%' +(:p_nombre) + '%']]></query>
 		</hibernate-mapping>
 	

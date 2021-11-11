@@ -76,6 +76,7 @@ public static void Create (string databaseArg, string userArg, string passArg)
 public static void InitializeData ()
 {
         /*PROTECTED REGION ID(initializeDataMethod) ENABLED START*/
+
         try
         {
                 // Insert the initilizations of entities using the CEN classes
@@ -181,15 +182,36 @@ public static void InitializeData ()
                 usuEN = new UsuarioCAD ().ReadOIDDefault (idUsu);
                 Console.WriteLine ("Edad despues de asignar " + usuEN.Edad);
 
+                //MATCH
+                MatchCAD matchCAD = new MatchCAD ();
+                MatchCEN matchCEN = new MatchCEN ();
+
+                MensajeCEN men1 = new MensajeCEN ();
+                // men1.new
+
+
+
+                // SESION
+                SesionCAD sesCAD = new SesionCAD ();
                 SesionCEN sesCEN = new SesionCEN ();
                 DateTime dateNow = DateTime.Now;
                 //int idSes = sesCEN.New_ (new DateTime (dateNow.Year, dateNow.Month, dateNow.Day, 4, 5, 6), idUsu, idUsu);
                 int idSes = sesCEN.New_ (DateTime.Now, idUsu);
+                Console.WriteLine ("ASDasdsadsada " + idSes);
+
+
                 SesionEN sesEN = new SesionCAD ().ReadOIDDefault (idSes);
+
+                Console.WriteLine ("hora de inicio antes " + sesEN.Hora_inicio);
+
                 Console.WriteLine ("hora de fin antes " + sesEN.Hora_fin);
+
+
 
                 try
                 {
+                        Console.WriteLine ("Se ha cerrado la sesion: " + idSes + " - ");
+
                         //sesCEN.CerrarSesion (idSes);
                 }
                 catch (Exception e)
@@ -238,6 +260,15 @@ public static void InitializeData ()
                 foreach (UsuarioEN ped in listaUsuarioBusqueda) {
                         Console.WriteLine ("Usuario " + ped.Email + ": " + ped.Genero + ", " + ped.Edad + ", " + ped.Orientacion_sexual);
                 }
+
+
+                IList<MatchEN> listaFiltroNombreMatch = null; //= matchCEN.Filtra
+                
+
+                foreach (MatchEN matchen in listaFiltroNombreMatch) {
+                        Console.WriteLine ("Usuario " + matchen.Usuario_emisor.Nombre);
+                }
+
 
 
 

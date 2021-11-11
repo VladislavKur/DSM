@@ -163,6 +163,8 @@
 			
 			<Compile Include="CP\Proyecto\MatchCP_HacerMatch.cs" />
 			
+			<Compile Include="CP\Proyecto\MatchCP_FiltrarPorNombre.cs" />
+			
 	<Compile Include="EN\Proyecto\SesionEN.cs" />
 	<Compile Include="CEN\Proyecto\SesionCEN.cs" />
 	<Compile Include="CAD\Proyecto\ISesionCAD.cs" />

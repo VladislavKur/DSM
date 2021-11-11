@@ -39,7 +39,7 @@ public IPremiumCAD get_IPremiumCAD ()
         return this._IPremiumCAD;
 }
 
-public void Modify (int p_Premium_OID, double p_precio, ProyectoGenNHibernate.Enumerated.Proyecto.EstadoCompraEnum p_estadoCompra, Nullable<DateTime> p_fecha_compra, Nullable<DateTime> p_fecha_caduca)
+public void Modify (int p_Premium_OID, double p_precio, ProyectoGenNHibernate.Enumerated.Proyecto.EstadoCompraEnum p_estadoCompra, Nullable<DateTime> p_fecha_compra)
 {
         PremiumEN premiumEN = null;
 
@@ -49,7 +49,6 @@ public void Modify (int p_Premium_OID, double p_precio, ProyectoGenNHibernate.En
         premiumEN.Precio = p_precio;
         premiumEN.EstadoCompra = p_estadoCompra;
         premiumEN.Fecha_compra = p_fecha_compra;
-        premiumEN.Fecha_caduca = p_fecha_caduca;
         //Call to PremiumCAD
 
         _IPremiumCAD.Modify (premiumEN);

@@ -28,13 +28,42 @@ public void HacerMatch (int p_oid, int p_oid_usuario_emisor, int p_oid_usuario_r
         IMatchCAD matchCAD = null;
         MatchCEN matchCEN = null;
 
+        UsuarioCAD usuarioCAD = new UsuarioCAD ();
+
 
 
         try
         {
                 SessionInitializeTransaction ();
-                matchCAD = new MatchCAD (session);
-                matchCEN = new  MatchCEN (matchCAD);
+                int oid;
+                //Initialized MatchEN
+                MatchEN matchEN;
+                matchEN = new MatchEN ();
+                matchEN.Estado = Enumerated.Proyecto.EstadoMatchEnum.pendiente;
+
+                bool aceptoMatch = false;
+
+
+                UsuarioEN usuarioEmisorEN = usuarioCAD.ReadOIDDefault (p_oid_usuario_emisor);
+                UsuarioEN usuarioReceptorEN = usuarioCAD.ReadOIDDefault (p_oid_usuario_receptor);
+                foreach (MatchEN matchEmisor in usuarioEmisorEN.Match_emisor) if (!(aceptoMatch)) {
+                                if (matchEmisor.Usuario_receptor == usuarioReceptorEN) {
+                                        aceptoMatch = true;
+                                }
+                        }
+
+                foreach (MatchEN matchReceptor in usuarioReceptorEN.Match_receptor) if (!(aceptoMatch)) {
+                                if (matchReceptor.Usuario_emisor == usuarioReceptorEN) {
+                                        aceptoMatch = true;
+                                }
+                        }
+
+                if (!(aceptoMatch)) {
+                        throw new Exception ("El match no ha sido aceptado ");
+                }
+                else{
+                        matchEN.Estado = Enumerated.Proyecto.EstadoMatchEnum.aceptado;
+                }
 
 
 
@@ -57,7 +86,7 @@ public void HacerMatch (int p_oid, int p_oid_usuario_emisor, int p_oid_usuario_r
         }
 
 
-        /*PROTECTED REGION END*/
+/*PROTECTED REGION END*/
 }
 }
 }

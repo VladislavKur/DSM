@@ -264,5 +264,36 @@ public System.Collections.Generic.IList<MatchEN> ReadAll (int first, int size)
 
         return result;
 }
+
+public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> FiltrarPorNombre (string p_nombre)
+{
+        System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM MatchEN self where select * FROM MatchEN as ma1, UsurioEN as usu  WHERE usu.nombre like '%' +(:p_nombre) + '%'";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("MatchENfiltrarPorNombreHQL");
+                query.SetParameter ("p_nombre", p_nombre);
+
+                result = query.List<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoGenNHibernate.Exceptions.DataLayerException ("Error in MatchCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
 }
 }

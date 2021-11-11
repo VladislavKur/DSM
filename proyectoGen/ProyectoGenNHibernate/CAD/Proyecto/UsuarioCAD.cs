@@ -528,9 +528,8 @@ public void AddSesionTerminada (int p_Usuario_OID, ProyectoGenNHibernate.EN.Proy
         {
                 SessionInitializeTransaction ();
                 usuarioEN = (UsuarioEN)session.Load (typeof(UsuarioEN), p_Usuario_OID);
-                usuarioEN.Sesion_terminada = (ProyectoGenNHibernate.EN.Proyecto.SesionEN)session.Load (typeof(ProyectoGenNHibernate.EN.Proyecto.SesionEN), sesion_a_terminar);
-
-                usuarioEN.Sesion_terminada.Usuario_0 = usuarioEN;
+                usuarioEN.Sesion_terminada = (System.Collections.Generic.IList<SesionEN>)session.Load(typeof(SesionEN), sesion_a_terminar);
+                // usuarioEN.Sesion_terminada.Usuario_0 = usuarioEN;
 
 
 

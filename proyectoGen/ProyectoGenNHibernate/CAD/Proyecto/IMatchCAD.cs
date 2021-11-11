@@ -29,5 +29,9 @@ MatchEN ReadOID (int id
 
 
 System.Collections.Generic.IList<MatchEN> ReadAll (int first, int size);
+
+
+
+System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> FiltrarPorNombre (string p_nombre);
 }
 }

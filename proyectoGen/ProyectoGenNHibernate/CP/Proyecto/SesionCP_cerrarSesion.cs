@@ -38,20 +38,21 @@ public void CerrarSesion (int p_Sesion_OID, int p_usuario_0_OID)
                 sesionCAD = new SesionCAD (session);
                 sesionCEN = new  SesionCEN (sesionCAD);
 
+                Console.WriteLine ("hola gente");
 
 
                 DateTime tiempo_actual = DateTime.Now;
 
                 SesionEN sesionEN = new SesionEN ();
                 sesionEN.Hora_fin = tiempo_actual;
-                
+
 
 
 
                 Console.WriteLine ("Hora fin: " + tiempo_actual);
                 // anhado la sesion terminada a la lista
 
-                usuarioCAD.AddSesionTerminada(p_usuario_0_OID, sesionEN);
+                if (sesionEN.Hora_fin != null) usuarioCAD.AddSesionTerminada (p_usuario_0_OID, sesionEN);
 
                 //Call to SesionCAD
 

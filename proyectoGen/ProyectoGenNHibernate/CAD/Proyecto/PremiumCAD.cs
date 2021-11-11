@@ -163,9 +163,6 @@ public void Modify (PremiumEN premium)
 
                 premiumEN.Fecha_compra = premium.Fecha_compra;
 
-
-                premiumEN.Fecha_caduca = premium.Fecha_caduca;
-
                 session.Update (premiumEN);
                 SessionCommit ();
         }

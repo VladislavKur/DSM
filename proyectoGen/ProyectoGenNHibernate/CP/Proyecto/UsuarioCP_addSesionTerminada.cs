@@ -27,7 +27,7 @@ public void AddSesionTerminada (int p_Usuario_OID, ProyectoGenNHibernate.EN.Proy
 
         IUsuarioCAD usuarioCAD = null;
         UsuarioCEN usuarioCEN = null;
-
+        UsuarioEN usuarioEN = new UsuarioEN ();
 
 
         try
@@ -37,14 +37,14 @@ public void AddSesionTerminada (int p_Usuario_OID, ProyectoGenNHibernate.EN.Proy
                 usuarioCEN = new  UsuarioCEN (usuarioCAD);
 
 
-
+                usuarioEN.Sesion_terminada.Add (sesion_a_terminar);
 
 
 
                 //Call to UsuarioCAD
 
                 // usuarioCAD.AddSesionTerminada (p_Usuario_OID, p_sesion_terminada_OIDs, sesion_a_terminar);
-                usuarioCAD.AddSesionTerminada(p_Usuario_OID,  sesion_a_terminar);
+                usuarioCAD.AddSesionTerminada (p_Usuario_OID, sesion_a_terminar);
 
 
 

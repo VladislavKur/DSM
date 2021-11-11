@@ -10,8 +10,6 @@ using System.Collections.Generic;
 using ProyectoGenNHibernate.EN.Proyecto;
 using ProyectoGenNHibernate.CAD.Proyecto;
 using ProyectoGenNHibernate.CEN.Proyecto;
-using ProyectoGenNHibernate.Enumerated.Proyecto;
-
 
 
 
@@ -23,7 +21,7 @@ namespace ProyectoGenNHibernate.CP.Proyecto
 {
 public partial class MatchCP : BasicCP
 {
-public ProyectoGenNHibernate.EN.Proyecto.MatchEN New_ (ProyectoGenNHibernate.Enumerated.Proyecto.EstadoMatchEnum p_estado, int p_usuario_emisor, int p_usuario_receptor)
+public ProyectoGenNHibernate.EN.Proyecto.MatchEN New_ (int p_usuario_emisor, int p_usuario_receptor)
 {
         /*PROTECTED REGION ID(ProyectoGenNHibernate.CP.Proyecto_Match_new_) ENABLED START*/
 
@@ -39,7 +37,9 @@ public ProyectoGenNHibernate.EN.Proyecto.MatchEN New_ (ProyectoGenNHibernate.Enu
                 matchCAD = new MatchCAD (session);
                 matchCEN = new  MatchCEN (matchCAD);
 
-                //UsuarioCAD usuarioCAD = new UsuarioCAD (session);
+
+
+                UsuarioCAD usuarioCAD = new UsuarioCAD (session);
 
 
 
@@ -47,10 +47,21 @@ public ProyectoGenNHibernate.EN.Proyecto.MatchEN New_ (ProyectoGenNHibernate.Enu
                 //Initialized MatchEN
                 MatchEN matchEN;
                 matchEN = new MatchEN ();
-                matchEN.Estado = p_estado;
-                //matchEN.Estado = EstadoMatchEnum.pendiente;
+                matchEN.Estado = Enumerated.Proyecto.EstadoMatchEnum.pendiente;
+                bool aceptoMatch = false;
 
 
+                UsuarioEN usuarioEmisorEN = usuarioCAD.ReadOIDDefault (p_usuario_emisor);
+                UsuarioEN usuarioReceptorEN = usuarioCAD.ReadOIDDefault (p_usuario_receptor);
+
+                foreach (MatchEN matchEmisor in usuarioEmisorEN.Match_emisor) if (!(aceptoMatch)) {
+                                if (matchEmisor.Usuario_receptor == usuarioReceptorEN) {
+                                        aceptoMatch = true;
+                                        // modificar estado del match /
+
+                                        //matchCEN.Modify(matchCEN.ReadOID(), EstadoMatchEnum.aceptado);
+                                }
+                        }
                 //UsuarioEN usuarioEN = usuarioCAD.ReadOIDDefault (p_usuario_emisor);
 
                 if (p_usuario_emisor != null) {
