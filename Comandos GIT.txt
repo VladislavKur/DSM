@@ -1,12 +1,12 @@
 //////////////////////////////////////// COMANDOS GITHUB ///////////////////////////////////
 
-git clone urlRepo.git//clonar
+git clone urlRepo.git //clonar
 
 git pull // descargar lo que hay(de la rama en la nube)
 
 git push // subir a la Rama(nube)
 
-git commit -am "nombre del commit" // hacer un commit
+git commit -m "nombre del commit" // hacer un commit
 
 git add * //añadir todos cambios de los que vas a hacer commit
 

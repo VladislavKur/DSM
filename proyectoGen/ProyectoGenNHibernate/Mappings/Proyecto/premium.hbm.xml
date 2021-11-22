@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoGenNHibernate"
+		                   namespace="ProyectoGenNHibernate.EN.Proyecto">
+		    
+		    
+			
+				<class name="PremiumEN" table="Premium"> 
+				  	
+						<id name="Id" column="idPremium" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Precio" type="double"> 
+						<column name="precio"  not-null="true"/>
+					</property>
+					<property name="EstadoCompra" > 
+						<column name="estadoCompra"  not-null="true"/>
+					</property>
+					<property name="Fecha_compra" type="date"> 
+						<column name="fecha_compra"  not-null="true"/>
+					</property>
+					<property name="Fecha_caduca" type="date"> 
+						<column name="fecha_caduca" />
+					</property>
+			
+			
+			
+			
+			
+			
+			
+		  			
+					
+							<many-to-one name="Usuario" class="ProyectoGenNHibernate.EN.Proyecto.UsuarioEN" >
+								<column name="FK_idUsuario_idUsuario"/> 
+        					</many-to-one>
+					 
+						
+					
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="PremiumENReadAllHQL">from PremiumEN</query>
+		</hibernate-mapping>
+	
