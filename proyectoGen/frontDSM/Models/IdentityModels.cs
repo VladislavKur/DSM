@@ -29,5 +29,9 @@ namespace frontDSM.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<frontDSM.Models.UsuarioViewModel> UsuarioViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<frontDSM.Models.BusquedaViewModel> BusquedaViewModels { get; set; }
     }
 }

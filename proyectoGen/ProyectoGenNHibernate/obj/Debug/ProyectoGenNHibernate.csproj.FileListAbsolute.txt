@@ -29,8 +29,8 @@ C:\Users\lucyr\Desktop\Clase\Universidad\3º\DSM\ProyectoDSMGit\DSM\proyectoGen\
 C:\Users\lucyr\Desktop\Clase\Universidad\3º\DSM\ProyectoDSMGit\DSM\proyectoGen\ProyectoGenNHibernate\bin\Debug\Iesi.Collections.dll
 C:\Users\lucyr\Desktop\Clase\Universidad\3º\DSM\ProyectoDSMGit\DSM\proyectoGen\ProyectoGenNHibernate\bin\Debug\Antlr3.Runtime.dll
 C:\Users\lucyr\Desktop\Clase\Universidad\3º\DSM\ProyectoDSMGit\DSM\proyectoGen\ProyectoGenNHibernate\bin\Debug\log4net.dll
-C:\Users\lucyr\Desktop\Clase\Universidad\3º\DSM\ProyectoDSMGit\DSM\proyectoGen\ProyectoGenNHibernate\obj\Debug\ProyectoGenNHibernate.csproj.AssemblyReference.cache
 C:\Users\lucyr\Desktop\Clase\Universidad\3º\DSM\ProyectoDSMGit\DSM\proyectoGen\ProyectoGenNHibernate\obj\Debug\ProyectoGenNHibernate.csproj.CoreCompileInputs.cache
 C:\Users\lucyr\Desktop\Clase\Universidad\3º\DSM\ProyectoDSMGit\DSM\proyectoGen\ProyectoGenNHibernate\obj\Debug\ProyectoGenNHibernate.csproj.CopyComplete
 C:\Users\lucyr\Desktop\Clase\Universidad\3º\DSM\ProyectoDSMGit\DSM\proyectoGen\ProyectoGenNHibernate\obj\Debug\ProyectoGenNHibernate.dll
 C:\Users\lucyr\Desktop\Clase\Universidad\3º\DSM\ProyectoDSMGit\DSM\proyectoGen\ProyectoGenNHibernate\obj\Debug\ProyectoGenNHibernate.pdb
+C:\Users\lucyr\Desktop\Clase\Universidad\3º\DSM\ProyectoDSMGit\DSM\proyectoGen\ProyectoGenNHibernate\obj\Debug\ProyectoGenNHibernate.csproj.AssemblyReference.cache

@@ -2,6 +2,8 @@
 using ProyectoGenNHibernate.CAD.Proyecto;
 using ProyectoGenNHibernate.CEN.Proyecto;
 using ProyectoGenNHibernate.EN.Proyecto;
+using ProyectoGenNHibernate.Enumerated.Proyecto;
+
 using frontDSM.Models;
 using frontDSM.Assembler;
 using System;
@@ -29,6 +31,8 @@ namespace frontDSM.Controllers
             return View(listViewModel);
         }
 
+        
+
         // GET: Usuario/Details/5
         public ActionResult Details(int id)
         {
@@ -48,13 +52,93 @@ namespace frontDSM.Controllers
         {
             SessionInitialize();
             UsuarioCAD cadArt = new UsuarioCAD(session);
-            PremiumCAD cadCat = new PremiumCAD(session);
             UsuarioCEN cen = new UsuarioCEN(cadArt);
             IList<UsuarioEN> listArtEn = cen.DameUsuariosPremium();
             IEnumerable<UsuarioViewModel> listArt = new UsuarioAssembler().ConvertListENToModel(listArtEn).ToList();
 
             SessionClose();
             return View(listArt);
+        }
+
+
+        public ActionResult PorOrientacion()
+        {
+            SessionInitialize();
+            UsuarioCAD cadArt = new UsuarioCAD(session);
+            UsuarioCEN cen = new UsuarioCEN(cadArt);
+            IList<UsuarioEN> listArtEn = cen.DameUsuariosPremium();
+            IEnumerable<UsuarioViewModel> listArt = new UsuarioAssembler().ConvertListENToModel(listArtEn).ToList();
+
+            SessionClose();
+            return View(listArt);
+        }
+
+        //GET Usuario/Busqueda
+        /*public ActionResult Busqueda()
+        {
+            SessionInitialize();
+            UsuarioCAD cadArt = new UsuarioCAD(session);
+            UsuarioCEN cen = new UsuarioCEN(cadArt);
+
+            int? edadmin = null;
+            int? edadmax = null;
+
+           
+            if (busquedaViewModel.Edad_min < 18)
+            {
+                edadmin = 18;
+            }
+            if (busquedaViewModel.Edad_max > 60)
+            {
+                edadmax = 60;
+            }
+            
+            IList<UsuarioEN> listArtEn = cen.FiltroBusqueda(busquedaViewModel.Orientacion_sexual, busquedaViewModel.Genero, edadmin, edadmax);
+            IEnumerable<UsuarioViewModel> listArt = new UsuarioAssembler().ConvertListENToModel(listArtEn).ToList();
+
+            SessionClose();
+            return View(listArt);
+        }*/
+
+        public ActionResult ListaUsuariosPartial(int id) {
+            if (id == 1)
+            {
+                return View((IEnumerable<UsuarioViewModel>)Session["listaUsuarios"]);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
+
+        public ActionResult Buscar()
+        {
+            BusquedaViewModel buscarvm = new BusquedaViewModel();
+            return View(buscarvm);
+        }
+        //POST: Usuario/Busqueda
+        [HttpPost]
+        public ActionResult Busqueda(BusquedaViewModel busquedaViewModel)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+                SessionInitialize();
+                UsuarioCAD cadArt = new UsuarioCAD(session);
+                UsuarioCEN cen = new UsuarioCEN(cadArt);
+                             
+
+                IList<UsuarioEN> listArtEn = cen.FiltroBusqueda(busquedaViewModel.Orientacion_sexual, busquedaViewModel.Genero, busquedaViewModel.Edad_min, busquedaViewModel.Edad_max);
+                IEnumerable<UsuarioViewModel> listArt = new UsuarioAssembler().ConvertListENToModel(listArtEn).ToList();
+                Session["listaUsuarios"] = listArt;
+                SessionClose();
+
+                return RedirectToAction("Buscar");
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: Usuario/Create
@@ -71,9 +155,11 @@ namespace frontDSM.Controllers
             {
                 // TODO: Add insert logic here
                 UsuarioCEN usuCEN = new UsuarioCEN();
+
                 int id = usuCEN.New_(usu.Pass, usu.Email, usu.Nickname, usu.Nombre, usu.Apellidos, usu.Fecha_nacimiento,
                             usu.Orientacion_sexual, usu.Genero, usu.Fecha_registro, usu.Like_counter);
                 usuCEN.CalcularEdad(id);
+
                 return RedirectToAction("index");
             }
             catch
