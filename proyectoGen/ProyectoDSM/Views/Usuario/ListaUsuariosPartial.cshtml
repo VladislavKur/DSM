@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ProyectoDSM.Models.UsuarioViewModel>
+@using ProyectoGenNHibernate.EN.Proyecto;
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nickname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Edad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EsPremium)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    
+            string email = ""; //User.Identity.GetUserName()
+            if (Session["Usuario"] != null)
+            {
+                email = ((UsuarioEN)Session["Usuario"]).Email;
+            }
+            if (email != item.Email)
+        {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nickname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Edad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EsPremium)
+        </td>
+        <td>
+
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Enviar Peticion", "Create", "Match", new { id = item.Id }, null)
+        </td>
+    </tr>
+        }
+
+    }
+
+</table>

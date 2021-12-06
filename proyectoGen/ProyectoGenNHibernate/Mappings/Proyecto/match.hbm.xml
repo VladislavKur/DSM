@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoGenNHibernate"
+		                   namespace="ProyectoGenNHibernate.EN.Proyecto">
+		    
+		    
+			
+				<class name="MatchEN" table="Match"> 
+				  	
+						<id name="Id" column="idMatch" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Estado" > 
+						<column name="estado"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+		  			
+						<many-to-one name="Usuario_emisor" class="ProyectoGenNHibernate.EN.Proyecto.UsuarioEN" >	
+								<column name="FK_idUsuario_idUsuario"/> 
+						</many-to-one>
+											 					
+			
+		  			
+						<many-to-one name="Usuario_receptor" class="ProyectoGenNHibernate.EN.Proyecto.UsuarioEN" >	
+								<column name="FK_idUsuario_idUsuario_0"/> 
+						</many-to-one>
+											 					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="MatchENReadAllHQL">from MatchEN</query>
+		  <query name="MatchENfiltrarPorNombreHQL"><![CDATA[SELECT usu FROM MatchEN as ma1 inner join ma1.Usuario_emisor as usu WHERE usu.Nombre  like  '%'+ :p_nombre +  '%']]></query>
+		</hibernate-mapping>
+	

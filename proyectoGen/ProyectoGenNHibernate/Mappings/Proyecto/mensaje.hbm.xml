@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoGenNHibernate"
+		                   namespace="ProyectoGenNHibernate.EN.Proyecto">
+		    
+		    
+			
+				<class name="MensajeEN" table="Mensaje"> 
+				  	
+						<id name="Id" column="idMensaje" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Contenido" type="string"> 
+						<column name="contenido"  not-null="true"/>
+					</property>
+					<property name="Estado" > 
+						<column name="estado"  not-null="true"/>
+					</property>
+					<property name="HoraEnvio" type="timestamp"> 
+						<column name="horaEnvio"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+			
+		  			
+						<many-to-one name="Usuario_receptor" class="ProyectoGenNHibernate.EN.Proyecto.UsuarioEN" >	
+								<column name="FK_idUsuario_idUsuario"/> 
+						</many-to-one>
+											 					
+			
+		  			
+						<many-to-one name="Usuario_emisor" class="ProyectoGenNHibernate.EN.Proyecto.UsuarioEN" >	
+								<column name="FK_idUsuario_idUsuario_0"/> 
+						</many-to-one>
+											 					
+			
+					
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="MensajeENReadAllHQL">from MensajeEN</query>
+		  <query name="MensajeENdameMensajesEmisorHQL"><![CDATA[select men FROM MensajeEN as men INNER JOIN men.Usuario_emisor as usuEm WHERE men.Usuario_emisor = :p_id]]></query>
+		  <query name="MensajeENdameMensajesReceptorHQL"><![CDATA[select men FROM MensajeEN as men INNER JOIN men.Usuario_receptor as usuRep WHERE men.Usuario_receptor = :p_id]]></query>
+		  <query name="MensajeENdameMensajesHQL"><![CDATA[select men FROM MensajeEN as men INNER JOIN men.Usuario_emisor as usuEm WHERE men.Usuario_emisor = :p_idUsuario OR men.Usuario_receptor = :p_idUsuario ORDER BY men.HoraEnvio DESC]]></query>
+		  <query name="MensajeENdameMensajesEntreEstos2HQL"><![CDATA[select men FROM MensajeEN as men INNER JOIN men.Usuario_emisor as usuEm WHERE (men.Usuario_receptor = :p_idUsuarioReceptor AND men.Usuario_emisor = :p_idUsuario) OR (men.Usuario_receptor = :p_idUsuario AND men.Usuario_emisor = :p_idUsuarioReceptor) ORDER BY men.HoraEnvio DESC]]></query>
+		</hibernate-mapping>
+	

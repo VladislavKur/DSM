@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoGenNHibernate"
+		                   namespace="ProyectoGenNHibernate.EN.Proyecto">
+		    
+		    
+			
+				
+<joined-subclass name="UsuarioVIPEN" extends="ProyectoGenNHibernate.EN.Proyecto.UsuarioEN" table="UsuarioVIP"> 
+	<key>
+    	
+				<column name="emailUsuario"/>
+		
+    	
+   	</key>
+
+			
+					
+					<property name="NumSocio" type="integer"> 
+						<column name="numSocio"  not-null="true"/>
+					</property>
+			
+			
+					
+		
+ 	  
+		 </joined-subclass>
+		  
+		  <query name="UsuarioVIPENReadAllHQL">from UsuarioVIPEN</query>
+		</hibernate-mapping>
+	
