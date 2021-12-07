@@ -76,7 +76,7 @@ namespace ProyectoDSM.Models
 
         [Display(Prompt = "Imagen de pefil", Description = "Imagen de perfil", Name = "Imagen ")]
         [Required(ErrorMessage = "Debe indicar una imagen de perfil")]
-        public string Foto { get; set; }
+        public string Imagen { get; set; }
 
     }
 }

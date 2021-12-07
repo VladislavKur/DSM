@@ -212,7 +212,7 @@ namespace ProyectoDSM.Controllers
                 UsuarioCEN usuarioCEN = new UsuarioCEN();
 
                 usuarioCEN.Modify(id, usu.Password, usu.Email, usu.Nickname, usu.Nombre, usu.Apellidos, usu.Fecha_nacimiento,
-                                    usu.Orientacion_sexual, usu.Genero, usu.Fecha_registro, usu.Like_counter, usu.EsPremium, usu.Foto);
+                                    usu.Orientacion_sexual, usu.Genero, usu.Fecha_registro, usu.Like_counter, usu.EsPremium, usu.Imagen);
 
 
                 return RedirectToAction("Index");

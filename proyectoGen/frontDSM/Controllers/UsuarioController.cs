@@ -31,7 +31,7 @@ namespace frontDSM.Controllers
             return View(listViewModel);
         }
 
-
+        
 
         // GET: Usuario/Details/5
         public ActionResult Details(int id)
@@ -100,8 +100,7 @@ namespace frontDSM.Controllers
             return View(listArt);
         }*/
 
-        public ActionResult ListaUsuariosPartial(int id)
-        {
+        public ActionResult ListaUsuariosPartial(int id) {
             if (id == 1)
             {
                 return View((IEnumerable<UsuarioViewModel>)Session["listaUsuarios"]);
@@ -127,12 +126,11 @@ namespace frontDSM.Controllers
                 SessionInitialize();
                 UsuarioCAD cadArt = new UsuarioCAD(session);
                 UsuarioCEN cen = new UsuarioCEN(cadArt);
+                             
 
-
-                IList<UsuarioEN> listArtEn = cen.FiltroBusqueda(busquedaViewModel.Orientacion_sexual, busquedaViewModel.Genero, busquedaViewModel.Edad_min, busquedaViewModel.Edad_max);
-
-                IEnumerable<UsuarioViewModel> listArt = new UsuarioAssembler().ConvertListENToModel(listArtEn).ToList();
-                Session["listaUsuarios"] = listArt;
+               // IList<UsuarioEN> listArtEn = cen.FiltroBusqueda(busquedaViewModel.Orientacion_sexual, busquedaViewModel.Genero, busquedaViewModel.Edad_min, busquedaViewModel.Edad_max);
+                //IEnumerable<UsuarioViewModel> listArt = new UsuarioAssembler().ConvertListENToModel(listArtEn).ToList();
+               // Session["listaUsuarios"] = listArt;
                 SessionClose();
 
                 return RedirectToAction("Buscar");
@@ -146,8 +144,7 @@ namespace frontDSM.Controllers
         // GET: Usuario/Create
         public ActionResult Create()
         {
-            UsuarioViewModel usuarioViewModel = new UsuarioViewModel();
-            return View(usuarioViewModel);
+            return View();
         }
 
         // POST: Usuario/Create
@@ -159,9 +156,9 @@ namespace frontDSM.Controllers
                 // TODO: Add insert logic here
                 UsuarioCEN usuCEN = new UsuarioCEN();
 
-                int id = usuCEN.New_(usu.Pass, usu.Email, usu.Nickname, usu.Nombre, usu.Apellidos, usu.Fecha_nacimiento,
-                            usu.Orientacion_sexual, usu.Genero, usu.Fecha_registro, usu.Like_counter);
-                usuCEN.CalcularEdad(id);
+                //int id = usuCEN.New_(usu.Pass, usu.Email, usu.Nickname, usu.Nombre, usu.Apellidos, usu.Fecha_nacimiento,
+               //             usu.Orientacion_sexual, usu.Genero, usu.Fecha_registro, usu.Like_counter, usu.foto);
+              //  usuCEN.CalcularEdad(id);
 
                 return RedirectToAction("index");
             }
@@ -197,8 +194,8 @@ namespace frontDSM.Controllers
                 // TODO: Add update logic here
                 UsuarioCEN usuarioCEN = new UsuarioCEN();
 
-                usuarioCEN.Modify(usu.Id, usu.Pass, usu.Email, usu.Nickname, usu.Nombre, usu.Apellidos, usu.Fecha_nacimiento,
-                                    usu.Orientacion_sexual, usu.Genero, usu.Fecha_registro, usu.Like_counter, usu.EsPremium);
+              //  usuarioCEN.Modify(usu.Id, usu.Pass, usu.Email, usu.Nickname, usu.Nombre, usu.Apellidos, usu.Fecha_nacimiento,
+               //                     usu.Orientacion_sexual, usu.Genero, usu.Fecha_registro, usu.Like_counter, usu.EsPremium);
 
 
                 return RedirectToAction("Index");
