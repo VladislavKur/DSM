@@ -213,7 +213,7 @@ namespace ProyectoDSM.Controllers
 
                     UsuarioCEN usuarioCEN = new UsuarioCEN();
                     int id = usuarioCEN.New_(model.Password, model.Email, model.Nickname, model.Nombre, model.Apellidos, model.Fecha_nacimiento,
-                        model.Orientacion_sexual, model.Genero, DateTime.Now, 0,model.Foto);
+                        model.Orientacion_sexual, model.Genero, DateTime.Now, 0,model.Imagen);
                     
                     usuarioCEN.CalcularEdad(id);
                     

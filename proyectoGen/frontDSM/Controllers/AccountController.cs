@@ -76,11 +76,22 @@ namespace frontDSM.Controllers
 
             // No cuenta los errores de inicio de sesión para el bloqueo de la cuenta
             // Para permitir que los errores de contraseña desencadenen el bloqueo de la cuenta, cambie a shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Pass, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    UsuarioCEN usu = new UsuarioCEN();
+                    string token = usu.Login(model.Email, model.Pass);
+
+                    if(token != null) return RedirectToLocal(returnUrl);
+                    else
+                    {
+                        ModelState.AddModelError("", "Intento de Inicio de Sesion de Valido");
+                        return View(model);
+
+                    }
+
+
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -157,14 +168,14 @@ namespace frontDSM.Controllers
                 var result = await UserManager.CreateAsync(user, model.Pass);
                 if (result.Succeeded)
                 {
-
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                        
+                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
                     UsuarioCEN usuarioCEN = new UsuarioCEN();
-                    usuarioCEN.New_(model.Pass, model.Email, model.Nickname, model.Nombre, model.Apellidos, model.Fecha_nacimiento,
-                        model.Orientacion_sexual, model.Genero, DateTime.Now, 0);
+                   // usuarioCEN.New_(model.Pass, model.Email, model.Nickname, model.Nombre, model.Apellidos, model.Fecha_nacimiento,
+                  //      model.Orientacion_sexual, model.Genero, model.Fecha_registro, model.Like_counter);
 
-
+                    
                     // Para obtener más información sobre cómo habilitar la confirmación de cuentas y el restablecimiento de contraseña, visite https://go.microsoft.com/fwlink/?LinkID=320771
                     // Enviar correo electrónico con este vínculo
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

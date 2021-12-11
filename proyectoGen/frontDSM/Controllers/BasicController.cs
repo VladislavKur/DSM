@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,7 @@ using ProyectoGenNHibernate.CAD.Proyecto;
 
 namespace frontDSM.Controllers
 {
-    public class BasicController : Controller
+    public class BasicController: Controller
     {
         protected ISession session;
 
@@ -18,23 +18,21 @@ namespace frontDSM.Controllers
         {
         }
 
-        protected void SessionInitialize()
+        protected void SessionInitialize ()
         {
-            if (session == null)
-            {
-                session = NHibernateHelper.OpenSession();
-            }
+                if (session == null) {
+                        session = NHibernateHelper.OpenSession ();
+                }
         }
 
 
-        protected void SessionClose()
+        protected void SessionClose ()
         {
-            if (session != null && session.IsOpen)
-            {
-                session.Close();
-                session.Dispose();
-                session = null;
-            }
+                if (session != null && session.IsOpen) {
+                        session.Close ();
+                        session.Dispose ();
+                        session = null;
+                }
         }
     }
 }

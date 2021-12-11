@@ -46,6 +46,7 @@ namespace frontDSM.Models
 
         [Display(Prompt = "La fecha de nacimiento", Description = "La fecha de nacimiento", Name = "Fecha de nacimiento")]
         [Required(ErrorMessage = "Debe indicar una fecha de nacimiento para su usuario")]
+        [DataType (DataType.Date)]
         public DateTime Fecha_nacimiento { get; set; }
 
         [Display(Prompt = "Tu Orientacion Sexual", Description = "Tu Orientacion Sexual", Name = "Orientación Sexual")]
@@ -68,7 +69,7 @@ namespace frontDSM.Models
         public int Edad { get; set; }
 
         [Display(Prompt = "Si es premium", Description = "Si es Premium", Name = "Es premium")]
-
+        
         public Boolean EsPremium { get; set; }
 
 

@@ -85,7 +85,7 @@ public static void InitializeData ()
                 UsuarioCEN usuarioCEN = new UsuarioCEN ();
 
                 int idUsu = usuarioCEN.New_ ("1234", "hola@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (1800, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 0, @"https://pixnio.com/free-images/2021/09/21/2021-09-21-09-26-06-550x729.jpg");
-                
+
                 usuarioCEN.CalcularEdad (idUsu);
                 //vamos a decrementar en un usuario que no tiene likes debe saltar error
                 Console.WriteLine ("Vamos a decrementar los likes del usuario (debe dar error)");

@@ -56,7 +56,7 @@ namespace frontDSM.Models
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Contraseña")]
-        public string Password { get; set; }
+        public string Pass { get; set; }
 
         [Display(Name = "¿Recordar cuenta?")]
         public bool RememberMe { get; set; }
@@ -77,7 +77,7 @@ namespace frontDSM.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar contraseña")]
-        [Compare("Pass", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
+        [Compare("Password", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
         public string ConfirmPass { get; set; }
     }
 
@@ -96,7 +96,7 @@ namespace frontDSM.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar contraseña")]
-        [Compare("Pass", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
+        [Compare("Password", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
         public string ConfirmPass { get; set; }
 
         public string Code { get; set; }

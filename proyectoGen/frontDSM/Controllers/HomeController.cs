@@ -1,4 +1,7 @@
-﻿using System;
+﻿using frontDSM.Controllers;
+using ProyectoGenNHibernate.CEN.Proyecto;
+using ProyectoGenNHibernate.EN.Proyecto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,11 +9,16 @@ using System.Web.Mvc;
 
 namespace frontDSM.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BasicController
     {
         public ActionResult Index()
         {
-            return View();
+            SessionInitialize();
+
+
+            UsuarioCEN usuarioCE = new UsuarioCEN();
+             IList<UsuarioEN> a = usuarioCE.ReadAll(0, -1);
+            return View(a);
         }
 
         public ActionResult About()

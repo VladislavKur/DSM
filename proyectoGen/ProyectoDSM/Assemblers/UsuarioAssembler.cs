@@ -25,7 +25,7 @@ namespace ProyectoDSM.Assembler
             usu.Like_counter = en.Like_counter;
             usu.Edad = en.Edad;
             usu.EsPremium = en.EsPremium;
-            usu.Foto = en.Foto;
+            usu.Imagen = en.Foto;
 
 
             return usu;

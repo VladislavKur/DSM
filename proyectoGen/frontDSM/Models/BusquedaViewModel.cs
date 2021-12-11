@@ -22,12 +22,10 @@ namespace frontDSM.Models
 
         [Display(Prompt = "Nombre que se mostrará a los demás", Description = "Nombre que se mostrará a los demás", Name = "Edad minima")]
         [Range(minimum: 18, maximum: 60, ErrorMessage = "La edad tiene que estar entre 18 y 60 años")]
-        [Required(ErrorMessage = "Debe indicar una edad máxima")]
         public int? Edad_min { get; set; }
 
         [Display(Prompt = "Edad maxima", Description = "Edad maxima", Name = "Edad maxima")]
         [Range(minimum: 18, maximum: 60, ErrorMessage = "La edad tiene que estar entre 18 y 60 años")]
-        [Required(ErrorMessage = "Debe indicar una edad máxima")]
         public int? Edad_max { get; set; }
 
 
