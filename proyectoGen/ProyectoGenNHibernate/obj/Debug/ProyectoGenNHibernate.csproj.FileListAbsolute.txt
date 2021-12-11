@@ -13,6 +13,5 @@ C:\ooh4ria\workspaceMars\proyectoGen\ProyectoGenNHibernate\bin\Debug\Iesi.Collec
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoGenNHibernate\bin\Debug\Antlr3.Runtime.dll
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoGenNHibernate\bin\Debug\log4net.dll
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoGenNHibernate\obj\Debug\ProyectoGenNHibernate.csproj.CoreCompileInputs.cache
-C:\ooh4ria\workspaceMars\proyectoGen\ProyectoGenNHibernate\obj\Debug\ProyectoGenNHibernate.csproj.CopyComplete
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoGenNHibernate\obj\Debug\ProyectoGenNHibernate.dll
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoGenNHibernate\obj\Debug\ProyectoGenNHibernate.pdb

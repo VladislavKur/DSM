@@ -273,8 +273,7 @@ C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\bin\es\Microsoft.Owin.Security.
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\bin\es\Microsoft.Owin.Security.Google.resources.dll
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\obj\Debug\ProyectoDSM.csprojAssemblyReference.cache
+C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\obj\Debug\ProyectoDSM.csproj.AssemblyReference.cache
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\obj\Debug\ProyectoDSM.csproj.CoreCompileInputs.cache
-C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\obj\Debug\ProyectoDSM.csproj.CopyComplete
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\obj\Debug\ProyectoDSM.dll
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\obj\Debug\ProyectoDSM.pdb

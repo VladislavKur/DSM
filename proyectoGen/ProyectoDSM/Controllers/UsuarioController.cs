@@ -174,7 +174,7 @@ namespace ProyectoDSM.Controllers
                 UsuarioCEN usuCEN = new UsuarioCEN();
 
                 int id = usuCEN.New_(usu.Password, usu.Email, usu.Nickname, usu.Nombre, usu.Apellidos, usu.Fecha_nacimiento,
-                            usu.Orientacion_sexual, usu.Genero, usu.Fecha_registro, usu.Like_counter, fileName);
+                            usu.Orientacion_sexual, usu.Genero, usu.Fecha_registro, usu.Like_counter, @fileName);
                 usuCEN.CalcularEdad(id);
 
                 return RedirectToAction("Index");

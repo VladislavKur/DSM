@@ -42,48 +42,54 @@
         <th>
             @Html.DisplayNameFor(model => model.EsPremium)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foto)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pass)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nickname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Apellidos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha_nacimiento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha_registro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Like_counter)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Edad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EsPremium)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Pass)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nickname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Apellidos)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Fecha_nacimiento)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Fecha_registro)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Like_counter)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Edad)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.EsPremium)
+    </td>
+    <td>
+                <img height="60" width="100 "src="@Html.DisplayFor(modelItem => item.Foto)" />
+            </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+
+    </td>
+</tr>
 }
 
 </table>
