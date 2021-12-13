@@ -209,14 +209,14 @@ namespace ProyectoDSM.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     UsuarioCEN usuarioCEN = new UsuarioCEN();
                     int id = usuarioCEN.New_(model.Password, model.Email, model.Nickname, model.Nombre, model.Apellidos, model.Fecha_nacimiento,
-                        model.Orientacion_sexual, model.Genero, DateTime.Now, 0,model.Imagen);
-                    
+                        model.Orientacion_sexual, model.Genero, DateTime.Now, 0, model.Imagen);
+
                     usuarioCEN.CalcularEdad(id);
-                    
+
                     Session["Usuario"] = usuarioCEN.ReadOID(id);
                     UsuarioEN usuarioEN = (UsuarioEN)Session["Usuario"];
                     SesionCAD sesionCAD = new SesionCAD();

@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<ProyectoDSM.Models.UsuarioViewModel>
-
+@using ProyectoGenNHibernate.EN.Proyecto;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,7 +8,14 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @{int pagina = -1;
+        if (ViewData["pagina"] != null)
+        {
+            pagina = ((int)ViewData["pagina"]);
+        }
+    }
+    @Html.ActionLink("Siguiente", "Index", new { pagina = ++pagina })
+    @Html.ActionLink("Anterior", "Index", new { pagina = --pagina })
 </p>
 <table class="table">
     <tr>
@@ -45,44 +52,54 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nickname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Apellidos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha_nacimiento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha_registro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Like_counter)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Edad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EsPremium)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        string email = ""; //User.Identity.GetUserName()
+        if (Session["Usuario"] != null)
+        {
+            email = ((UsuarioEN)Session["Usuario"]).Email;
+        }
+        if (email != item.Email)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nickname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellidos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha_nacimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha_registro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Like_counter)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Edad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EsPremium)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+                    @Html.ActionLink("Enviar Peticion", "Create", "Match", new { id = item.Id }, null)
+                </td>
+            </tr>
+        }
+    }
 
 </table>

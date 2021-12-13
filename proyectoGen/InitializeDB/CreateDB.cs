@@ -84,8 +84,8 @@ public static void InitializeData ()
 
                 UsuarioCEN usuarioCEN = new UsuarioCEN ();
 
-                int idUsu = usuarioCEN.New_ ("1234", "hola@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (1800, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 0, @"https://pixnio.com/free-images/2021/09/21/2021-09-21-09-26-06-550x729.jpg");
-
+                //int idUsu = usuarioCEN.New_ ("1234", "hola@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (1800, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 0, @"https://pixnio.com/free-images/2021/09/21/2021-09-21-09-26-06-550x729.jpg");
+                int idUsu = usuarioCEN.New_ ("1234", "hola@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (1800, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 0);
                 usuarioCEN.CalcularEdad (idUsu);
                 //vamos a decrementar en un usuario que no tiene likes debe saltar error
                 Console.WriteLine ("Vamos a decrementar los likes del usuario (debe dar error)");
@@ -103,7 +103,8 @@ public static void InitializeData ()
                 Console.WriteLine ("El usuario1 ha dado like " + usuEN.Like_counter + " veces");
                 //Ahora decrementa cuando si puede hacerlo
                 Console.WriteLine ("Vamos a decrementar los likes del usuario2 (no debe dar error)");
-                int idUsu2 = usuarioCEN.New_ ("1234", "tanga@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (2001, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 5, @"https://cdn.stocksnap.io/img-thumbs/960w/girl-portrait_OWJB5WGPME.jpg");
+                //int idUsu2 = usuarioCEN.New_ ("1234", "tanga@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (2001, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 5, @"https://cdn.stocksnap.io/img-thumbs/960w/girl-portrait_OWJB5WGPME.jpg");
+                int idUsu2 = usuarioCEN.New_ ("1234", "tanga@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (2001, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 5);
                 usuarioCEN.CalcularEdad (idUsu2);
 
 
@@ -149,7 +150,7 @@ public static void InitializeData ()
 
                 try
                 {
-                        usuarioCEN.EditarPerfil (idUsu, "turbo2000", "Eustaquia", "Arocas", new DateTime (1900, 6, 30), OrientacionSexualEnum.homosexual, GeneroUsuarioEnum.mujer, "4567");
+                        usuarioCEN.EditarPerfil (idUsu, "turbo2000", "Eustaquia", "Arocas", new DateTime (1900, 6, 30), OrientacionSexualEnum.homosexual, GeneroUsuarioEnum.mujer);
                 }
                 catch (Exception e)
                 {
@@ -168,7 +169,7 @@ public static void InitializeData ()
                 //modificamos
                 try
                 {
-                        usuarioCEN.EditarPerfil (idUsu, "tristeza123", "Lucia", "Arocas", new DateTime (2011, 6, 11), OrientacionSexualEnum.heterosexual, GeneroUsuarioEnum.hombre, "1234");
+                        usuarioCEN.EditarPerfil (idUsu, "tristeza123", "Lucia", "Arocas", new DateTime (2011, 6, 11), OrientacionSexualEnum.heterosexual, GeneroUsuarioEnum.hombre);
                 }
                 catch (Exception e)
                 {
@@ -327,9 +328,9 @@ public static void InitializeData ()
                 sesEN = new SesionCAD ().ReadOIDDefault (idSes);
                 Console.WriteLine ("hora de fin despues " + sesEN.Hora_fin);
 
-                Console.WriteLine ("Creamos otra sesi�n");
-                sesCEN.New_ (DateTime.Now, idUsu);
-
+                Console.WriteLine ("Creamos otra sesion");
+                int idSesNot = sesCEN.New_ (DateTime.Now, idUsu);
+                //sesCP.CerrarSesion(idSesNot, idUsu);
                 listaSesiones = sesionCEN.DameSesionesUsuario (idUsu);
                 Console.WriteLine ("LISTA DE SESIONES");
                 foreach (SesionEN ped in listaSesiones) {
@@ -342,10 +343,17 @@ public static void InitializeData ()
                         Console.WriteLine ("Id: " + ped.Id + ", Hora inicio: " + ped.Hora_inicio + ", Hora fin: " + ped.Hora_fin);
                 }
 
+                listaSesiones = sesionCEN.DameUltimaSesionUsuario (idUsu);
+                Console.WriteLine ("ULTIMA SESION USUARIO");
+                foreach (SesionEN ped in listaSesiones) {
+                        Console.WriteLine ("Id: " + ped.Id + ", Hora inicio: " + ped.Hora_inicio + ", Hora fin: " + ped.Hora_fin);
+                }
+
+
                 PremiumCEN premiumCEN = new PremiumCEN ();
-                int idPrem = premiumCEN.New_ (9.99, EstadoCompraEnum.realizado, DateTime.Now);
+                int idPrem = premiumCEN.New_ (9.99, EstadoCompraEnum.realizado);
 
-
+                PremiumEN premiumEN = premiumCEN.ReadOID (idPrem);
                 usuarioCEN.AsignarPremium (idUsu, idPrem);
 
                 usuEN = new UsuarioCAD ().ReadOIDDefault (idUsu);
@@ -363,7 +371,7 @@ public static void InitializeData ()
 
                 IList<UsuarioEN> listaUsuarioDefecto = null;
 
-                listaUsuarioDefecto = usuarioCEN.FiltroDefecto (OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer);
+                listaUsuarioDefecto = usuarioCEN.FiltroDefecto (OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, false, 0, -1);
 
 
 
@@ -426,6 +434,18 @@ public static void InitializeData ()
                 Console.WriteLine ("Lista Emisor Match Usu2");
                 foreach (UsuarioEN ped in listaUsuarioMatchEmisor2) {
                         Console.WriteLine ("Usuario " + ped.Orientacion_sexual + ": " + ped.Genero + " nose " + ped.Email);
+                }
+
+                NotificacionCEN notificacionCEN = new NotificacionCEN ();
+                int idNotificacion = notificacionCEN.New_ ("Notificacion de Prueba");
+                notificacionCEN.AsignarSesion (idNotificacion, idSesNot);
+                IList<NotificacionEN> listaNotificaciones = null;
+                listaNotificaciones = notificacionCEN.DameNotificacionesUsuario (idUsu);
+
+                Console.WriteLine ("\n");
+                Console.WriteLine ("Lista Notificaciones");
+                foreach (NotificacionEN ped in listaNotificaciones) {
+                        Console.WriteLine ("Usuario: " + idUsu + " Contenido" + ped.Contenido);
                 }
 
 

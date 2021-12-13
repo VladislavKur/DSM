@@ -105,5 +105,9 @@ public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.Sesion
 {
         return _ISesionCAD.DameSesionesTerminadasUsuario (p_Usuario);
 }
+public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.SesionEN> DameUltimaSesionUsuario (int p_Usuario)
+{
+        return _ISesionCAD.DameUltimaSesionUsuario (p_Usuario);
+}
 }
 }

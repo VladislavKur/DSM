@@ -373,7 +373,7 @@ public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.Mensaj
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM MensajeEN self where select men FROM MensajeEN as men INNER JOIN men.Usuario_emisor as usuEm WHERE (men.Usuario_receptor = :p_idUsuarioReceptor AND men.Usuario_emisor = :p_idUsuario) OR (men.Usuario_receptor = :p_idUsuario AND men.Usuario_emisor = :p_idUsuarioReceptor) ORDER BY men.HoraEnvio DESC";
+                //String sql = @"FROM MensajeEN self where select men FROM MensajeEN as men INNER JOIN men.Usuario_emisor as usuEm WHERE (men.Usuario_receptor = :p_idUsuarioReceptor AND men.Usuario_emisor = :p_idUsuario) OR (men.Usuario_receptor = :p_idUsuario AND men.Usuario_emisor = :p_idUsuarioReceptor) ORDER BY men.HoraEnvio ASC";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("MensajeENdameMensajesEntreEstos2HQL");
                 query.SetParameter ("p_idUsuario", p_idUsuario);

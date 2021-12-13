@@ -286,5 +286,36 @@ public void AsignarSesion (int p_Notificacion_OID, int p_sesion_OID)
                 SessionClose ();
         }
 }
+
+public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.NotificacionEN> DameNotificacionesUsuario (int p_IdUsuario)
+{
+        System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.NotificacionEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM NotificacionEN self where select noti FROM NotificacionEN as noti INNER JOIN noti.Sesion as ses WHERE ses.Usuario.Id = :p_IdUsuario";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("NotificacionENdameNotificacionesUsuarioHQL");
+                query.SetParameter ("p_IdUsuario", p_IdUsuario);
+
+                result = query.List<ProyectoGenNHibernate.EN.Proyecto.NotificacionEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoGenNHibernate.Exceptions.DataLayerException ("Error in NotificacionCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
 }
 }

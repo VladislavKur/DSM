@@ -41,5 +41,6 @@
 		 </class>	
 		  
 		  <query name="NotificacionENReadAllHQL">from NotificacionEN</query>
+		  <query name="NotificacionENdameNotificacionesUsuarioHQL"><![CDATA[select noti FROM NotificacionEN as noti INNER JOIN noti.Sesion as ses WHERE ses.Usuario.Id = :p_IdUsuario]]></query>
 		</hibernate-mapping>
 	

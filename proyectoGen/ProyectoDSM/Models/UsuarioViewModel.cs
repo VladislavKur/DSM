@@ -12,7 +12,22 @@ namespace ProyectoDSM.Models
         [ScaffoldColumn(false)]
         public int Id { get; set; }
         
-    
+        /*//[Required]
+        [StringLength(100, ErrorMessage = "El número de caracteres de {0} debe ser al menos {2}.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Contraseña")]
+        public string Pass { get; set; }
+        
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirmar contraseña")]
+        [Compare("Pass", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
+        //[Required]
+        public string ConfirmPass { get; set; }*/
+        /*
+        [Display(Prompt = "El email asociado a tu cuenta", Description = "El email asociado a tu cuenta", Name = "Correo electronico")]
+        [Required(ErrorMessage = "Debe indicar un correo electrónico para su usuario")]
+        [StringLength(maximumLength: 256, ErrorMessage = "Su correo no puede superar los 256 caracteres")]
+        public string Email { get; set; }*/
 
         [Display(Prompt = "Nombre que se mostrará a los demás", Description = "Nombre que se mostrará a los demás", Name = "Nombre de usuario")]
         [Required(ErrorMessage = "Debe indicar un nombre de usuario para su usuario")]
@@ -62,8 +77,6 @@ namespace ProyectoDSM.Models
         [Display(Prompt = "Imagen de pefil", Description = "Imagen de perfil", Name = "Imagen ")]
         [Required(ErrorMessage = "Debe indicar una imagen de perfil")]
         public string Imagen { get; set; }
-
-        
 
     }
 }

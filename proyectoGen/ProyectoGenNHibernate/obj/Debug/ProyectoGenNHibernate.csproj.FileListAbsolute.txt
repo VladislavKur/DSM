@@ -15,3 +15,4 @@ C:\ooh4ria\workspaceMars\proyectoGen\ProyectoGenNHibernate\bin\Debug\log4net.dll
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoGenNHibernate\obj\Debug\ProyectoGenNHibernate.csproj.CoreCompileInputs.cache
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoGenNHibernate\obj\Debug\ProyectoGenNHibernate.dll
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoGenNHibernate\obj\Debug\ProyectoGenNHibernate.pdb
+C:\ooh4ria\workspaceMars\proyectoGen\ProyectoGenNHibernate\obj\Debug\ProyectoGenNHibernate.csproj.AssemblyReference.cache

@@ -160,12 +160,14 @@
 		 </class>	
 		  
 		  <query name="UsuarioENReadAllHQL">from UsuarioEN</query>
-		  <query name="UsuarioENfiltroDefectoHQL"><![CDATA[FROM UsuarioEN  as usu WHERE usu.Orientacion_sexual = :p_orientacion_sexual and usu.Genero = :p_genero]]></query>
+		  <query name="UsuarioENfiltroDefectoHQL"><![CDATA[FROM UsuarioEN  as usu WHERE usu.Orientacion_sexual = :p_orientacion_sexual and usu.Genero = :p_genero AND usu.EsPremium = :p_premium]]></query>
 		  <query name="UsuarioENfiltroBusquedaHQL"><![CDATA[FROM UsuarioEN as usu WHERE (:p_orientacion is not null AND usu.Orientacion_sexual = :p_orientacion) OR (:p_genero is not null AND usu.Genero = :p_genero) OR ((:p_edad_min is not null AND :p_edad_max is not null) AND (usu.Edad >= :p_edad_min AND usu.Edad <= :p_edad_max)) AND usu.EsPremium = :p_premium]]></query>
 		  <query name="UsuarioENdameUsuariosPremiumHQL"><![CDATA[FROM UsuarioEN WHERE EsPremium = True]]></query>
 		  <query name="UsuarioENdameUsuariosMatchReceptorHQL"><![CDATA[select usu FROM UsuarioEN as usu inner join usu.Match_receptor as matchRep where matchRep.Usuario_emisor.Id = :p_id AND matchRep.Estado = 2]]></query>
 		  <query name="UsuarioENdameUsuariosMatchEmisorHQL"><![CDATA[select usu FROM UsuarioEN as usu inner join usu.Match_emisor as matchEm where matchEm.Usuario_receptor.Id = :p_id AND matchEm.Estado = 2]]></query>
 		  <query name="UsuarioENdameUsuarioPorEmailHQL"><![CDATA[FROM UsuarioEN as usu where usu.Email = :p_email]]></query>
 		  <query name="UsuarioENdameUsuariosMatchPendienteHQL"><![CDATA[select usu FROM UsuarioEN as usu inner join usu.Match_emisor as matchEm where matchEm.Usuario_receptor.Id = :p_id AND matchEm.Estado = 1]]></query>
+		  <query name="UsuarioENdameUsuariomatchPendienteEmisorHQL"><![CDATA[select usu FROM UsuarioEN as usu inner join usu.Match_receptor as matchEm where matchEm.Usuario_emisor.Id = :p_id AND (matchEm.Estado = 1 OR matchEm.Estado = 3)]]></query>
+		  <query name="UsuarioENdameUsuariosMatchRechazadoReceptorHQL"><![CDATA[select usu FROM UsuarioEN as usu inner join usu.Match_receptor as matchRep where matchRep.Usuario_emisor.Id = :p_id AND matchRep.Estado = 3]]></query>
 		</hibernate-mapping>
 	

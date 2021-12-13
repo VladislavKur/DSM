@@ -12,6 +12,16 @@ namespace ProyectoDSM.Models
         [ScaffoldColumn(false)]
         public int Id { get; set; }
 
+        [ScaffoldColumn(false)]
+        public int IdReceptor { get; set; }
+        [ScaffoldColumn(false)]
+        public int IdEmisor { get; set; }
+
+        [Display(Prompt = "El emisor del mensaje", Description = "El emisor del mensaje", Name = "Nombre Emisor")]
+        public string NombreEmisor { get; set; }
+
+        [Display(Prompt = "El receptor del mensaje", Description = "El receptor del mensaje", Name = "Nombre Receptor")]
+        public string NombreReceptor { get; set; }
 
         [Display(Prompt = "El tipo de notificacion", Description = "El tipo de notificacion", Name = "Tipo de Notificación")]
         [Required(ErrorMessage = "Debe indicar el tipo de notificación")]

@@ -29,5 +29,8 @@ PremiumEN ReadOID (int id
 
 
 System.Collections.Generic.IList<PremiumEN> ReadAll (int first, int size);
+
+
+void ModificaPremium (PremiumEN premium);
 }
 }

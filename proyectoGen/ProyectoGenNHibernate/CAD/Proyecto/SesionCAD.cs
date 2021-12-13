@@ -299,7 +299,7 @@ public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.Sesion
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM SesionEN self where select ses FROM SesionEN ses INNER JOIN ses.Usuario as usu WHERE usu.Id = :p_Usuario";
+                //String sql = @"FROM SesionEN self where select ses FROM SesionEN ses INNER JOIN ses.Usuario as usu WHERE usu.Id = :p_Usuario AND ses.Hora_fin IS NULL";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("SesionENdameSesionesUsuarioHQL");
                 query.SetParameter ("p_Usuario", p_Usuario);
@@ -332,6 +332,36 @@ public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.Sesion
                 //String sql = @"FROM SesionEN self where select ses FROM SesionEN ses INNER JOIN ses.Usuario_0 as usu WHERE usu.Id = :p_Usuario";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("SesionENdameSesionesTerminadasUsuarioHQL");
+                query.SetParameter ("p_Usuario", p_Usuario);
+
+                result = query.List<ProyectoGenNHibernate.EN.Proyecto.SesionEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoGenNHibernate.Exceptions.DataLayerException ("Error in SesionCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.SesionEN> DameUltimaSesionUsuario (int p_Usuario)
+{
+        System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.SesionEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM SesionEN self where select ses FROM SesionEN ses INNER JOIN ses.Usuario as usu WHERE usu.Id = :p_Usuario";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("SesionENdameUltimaSesionUsuarioHQL");
                 query.SetParameter ("p_Usuario", p_Usuario);
 
                 result = query.List<ProyectoGenNHibernate.EN.Proyecto.SesionEN>();

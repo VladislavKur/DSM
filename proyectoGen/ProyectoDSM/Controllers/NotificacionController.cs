@@ -15,7 +15,7 @@ namespace ProyectoDSM.Controllers
     public class NotificacionController : BasicController
     {
         // GET: Notificacion
-        public ActionResult Index()
+        /*public ActionResult Index()
         {
             SessionInitialize();
             NotificacionCAD NotificacionCAD = new NotificacionCAD(session);
@@ -27,8 +27,21 @@ namespace ProyectoDSM.Controllers
 
             return View(listViewModel);
 
-        }
+        }*/
+        public ActionResult Index()
+        {
+            SessionInitialize();
+            NotificacionCAD NotificacionCAD = new NotificacionCAD(session);
+            NotificacionCEN NotificacionCEN = new NotificacionCEN(NotificacionCAD);
+            UsuarioEN usuario = (UsuarioEN)Session["Usuario"];
+            IList<NotificacionEN> listaNotificacions0 = NotificacionCEN.DameNotificacionesUsuario(usuario.Id);
+            IList<NotificacionEN> listaNotificacions = NotificacionCEN.ReadAll(0, -1);
+            IEnumerable<NotificacionViewModel> listViewModel = new NotificacionAssembler().ConvertListENToModel(listaNotificacions).ToList();
+            SessionClose();
 
+            return View(listViewModel);
+
+        }
         // GET: Notificacion/Details/5
         public ActionResult Details(int id)
         {

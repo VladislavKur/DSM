@@ -55,7 +55,8 @@
 		 </class>	
 		  
 		  <query name="SesionENReadAllHQL">from SesionEN</query>
-		  <query name="SesionENdameSesionesUsuarioHQL"><![CDATA[select ses FROM SesionEN ses INNER JOIN ses.Usuario as usu WHERE usu.Id = :p_Usuario]]></query>
+		  <query name="SesionENdameSesionesUsuarioHQL"><![CDATA[select ses FROM SesionEN ses INNER JOIN ses.Usuario as usu WHERE usu.Id = :p_Usuario AND ses.Hora_fin IS NULL]]></query>
 		  <query name="SesionENdameSesionesTerminadasUsuarioHQL"><![CDATA[select ses FROM SesionEN ses INNER JOIN ses.Usuario_0 as usu WHERE usu.Id = :p_Usuario]]></query>
+		  <query name="SesionENdameUltimaSesionUsuarioHQL"><![CDATA[select ses FROM SesionEN ses INNER JOIN ses.Usuario as usu WHERE usu.Id = :p_Usuario]]></query>
 		</hibernate-mapping>
 	

@@ -85,9 +85,9 @@ public System.Collections.Generic.IList<UsuarioEN> ReadAll (int first, int size)
         list = _IUsuarioCAD.ReadAll (first, size);
         return list;
 }
-public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> FiltroDefecto (ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum? p_orientacion_sexual, ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum ? p_genero)
+public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> FiltroDefecto (ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum? p_orientacion_sexual, ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum? p_genero, bool? p_premium, int first, int size)
 {
-        return _IUsuarioCAD.FiltroDefecto (p_orientacion_sexual, p_genero);
+        return _IUsuarioCAD.FiltroDefecto (p_orientacion_sexual, p_genero, p_premium, first, size);
 }
 public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> FiltroBusqueda (ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum? p_orientacion, ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum? p_genero, int? p_edad_min, int? p_edad_max, bool ? p_premium)
 {
@@ -112,6 +112,14 @@ public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.Usuari
 public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> DameUsuariosMatchPendiente (int p_id)
 {
         return _IUsuarioCAD.DameUsuariosMatchPendiente (p_id);
+}
+public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> DameUsuariomatchPendienteEmisor (int p_id)
+{
+        return _IUsuarioCAD.DameUsuariomatchPendienteEmisor (p_id);
+}
+public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> DameUsuariosMatchRechazadoReceptor (int p_id)
+{
+        return _IUsuarioCAD.DameUsuariosMatchRechazadoReceptor (p_id);
 }
 
 

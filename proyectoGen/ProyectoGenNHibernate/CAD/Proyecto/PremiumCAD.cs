@@ -163,6 +163,9 @@ public void Modify (PremiumEN premium)
 
                 premiumEN.Fecha_compra = premium.Fecha_compra;
 
+
+                premiumEN.Fecha_caduca = premium.Fecha_caduca;
+
                 session.Update (premiumEN);
                 SessionCommit ();
         }
@@ -263,6 +266,33 @@ public System.Collections.Generic.IList<PremiumEN> ReadAll (int first, int size)
         }
 
         return result;
+}
+
+public void ModificaPremium (PremiumEN premium)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                PremiumEN premiumEN = (PremiumEN)session.Load (typeof(PremiumEN), premium.Id);
+
+                premiumEN.EstadoCompra = premium.EstadoCompra;
+
+                session.Update (premiumEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoGenNHibernate.Exceptions.DataLayerException ("Error in PremiumCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
 }
 }
 }

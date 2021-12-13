@@ -1,4 +1,4 @@
-﻿@model IEnumerable<frontDSM.Models.PremiumViewModel>
+﻿@model IEnumerable<ProyectoDSM.Models.PremiumViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -9,6 +9,14 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+    @{int pagina = -1;
+        if (ViewData["pagina"] != null)
+        {
+            pagina = ((int)ViewData["pagina"]);
+        }
+    }
+    @Html.ActionLink("Siguiente", "Index", new { pagina= ++pagina  })
+    
 </p>
 <table class="table">
     <tr>
@@ -41,6 +49,7 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
+
 }
 
 </table>

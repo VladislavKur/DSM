@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -7,6 +8,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ProyectoDSM.Models;
+
+using ProyectoGenNHibernate.CEN.Proyecto;
+using ProyectoGenNHibernate.EN.Proyecto;
 
 namespace ProyectoDSM.Controllers
 {
@@ -237,6 +241,17 @@ namespace ProyectoDSM.Controllers
                 if (user != null)
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                    // Modifico el password en la server
+
+                    UsuarioCEN cliCEN = new UsuarioCEN();
+                    string email = User.Identity.GetUserId();
+                    IList<UsuarioEN> listaUsuarios = cliCEN.DameUsuarioPorEmail(email);
+                    UsuarioEN cliEN = cliCEN.get_IUsuarioCAD().ReadOIDDefault(listaUsuarios[0].Id);
+                    if (cliEN != null)
+                    {
+                        cliCEN.Modify(cliEN.Id, model.NewPassword, cliEN.Email,cliEN.Nickname, cliEN.Nombre, cliEN.Apellidos, cliEN.Fecha_nacimiento, cliEN.Orientacion_sexual, cliEN.Genero, cliEN.Fecha_registro, cliEN.Like_counter, cliEN.EsPremium,cliEN.Foto);
+                    }
                 }
                 return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
             }

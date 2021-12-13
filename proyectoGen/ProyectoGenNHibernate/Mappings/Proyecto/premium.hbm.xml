@@ -22,7 +22,7 @@
 						<column name="fecha_compra"  not-null="true"/>
 					</property>
 					<property name="Fecha_caduca" type="date"> 
-						<column name="fecha_caduca" />
+						<column name="fecha_caduca"  not-null="true"/>
 					</property>
 			
 			

@@ -37,5 +37,8 @@ System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.SesionEN> Dam
 
 
 System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.SesionEN> DameSesionesTerminadasUsuario (int p_Usuario);
+
+
+System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.SesionEN> DameUltimaSesionUsuario (int p_Usuario);
 }
 }

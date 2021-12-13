@@ -32,5 +32,7 @@ System.Collections.Generic.IList<NotificacionEN> ReadAll (int first, int size);
 
 
 void AsignarSesion (int p_Notificacion_OID, int p_sesion_OID);
+
+System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.NotificacionEN> DameNotificacionesUsuario (int p_IdUsuario);
 }
 }

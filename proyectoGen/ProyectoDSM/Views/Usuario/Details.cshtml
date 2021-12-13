@@ -11,13 +11,6 @@
     <h4>UsuarioViewModel</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.EsPremium)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EsPremium)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Nickname)
@@ -44,32 +37,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Password)
+            @Html.DisplayNameFor(model => model.EsPremium)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Password)
+            @Html.DisplayFor(model => model.EsPremium)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Fecha_nacimiento)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fecha_nacimiento)
-        </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver al Inicio", "Index")
 </p>

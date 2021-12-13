@@ -19,9 +19,9 @@ namespace ProyectoGenNHibernate.CEN.Proyecto
 {
 public partial class PremiumCEN
 {
-public int New_ (double p_precio, ProyectoGenNHibernate.Enumerated.Proyecto.EstadoCompraEnum p_estadoCompra, Nullable<DateTime> p_fecha_compra)
+public int New_ (double p_precio, ProyectoGenNHibernate.Enumerated.Proyecto.EstadoCompraEnum p_estadoCompra)
 {
-        /*PROTECTED REGION ID(ProyectoGenNHibernate.CEN.Proyecto_Premium_new__customized) START*/
+        /*PROTECTED REGION ID(ProyectoGenNHibernate.CEN.Proyecto_Premium_new__customized) ENABLED START*/
 
         PremiumEN premiumEN = null;
 
@@ -33,8 +33,11 @@ public int New_ (double p_precio, ProyectoGenNHibernate.Enumerated.Proyecto.Esta
 
         premiumEN.EstadoCompra = p_estadoCompra;
 
-        premiumEN.Fecha_compra = p_fecha_compra;
+        DateTime dateTime = DateTime.Now;
+        premiumEN.Fecha_compra = dateTime;
 
+        dateTime = dateTime.AddDays (30);
+        premiumEN.Fecha_caduca = dateTime;
         //Call to PremiumCAD
 
         oid = _IPremiumCAD.New_ (premiumEN);

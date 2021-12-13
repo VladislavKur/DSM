@@ -325,17 +325,25 @@ public System.Collections.Generic.IList<UsuarioEN> ReadAll (int first, int size)
         return result;
 }
 
-public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> FiltroDefecto (ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum? p_orientacion_sexual, ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum ? p_genero)
+public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> FiltroDefecto (ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum? p_orientacion_sexual, ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum? p_genero, bool? p_premium, int first, int size)
 {
         System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> result;
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM UsuarioEN self where FROM UsuarioEN  as usu WHERE usu.Orientacion_sexual = :p_orientacion_sexual and usu.Genero = :p_genero";
+                //String sql = @"FROM UsuarioEN self where FROM UsuarioEN  as usu WHERE usu.Orientacion_sexual = :p_orientacion_sexual and usu.Genero = :p_genero AND usu.EsPremium = :p_premium";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("UsuarioENfiltroDefectoHQL");
                 query.SetParameter ("p_orientacion_sexual", p_orientacion_sexual);
                 query.SetParameter ("p_genero", p_genero);
+                query.SetParameter ("p_premium", p_premium);
+
+                if (size > 0) {
+                        query.SetFirstResult (first).SetMaxResults (size);
+                }
+                else{
+                        query.SetFirstResult (first);
+                }
 
                 result = query.List<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN>();
                 SessionCommit ();
@@ -627,6 +635,66 @@ public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.Usuari
                 //String sql = @"FROM UsuarioEN self where select usu FROM UsuarioEN as usu inner join usu.Match_emisor as matchEm where matchEm.Usuario_receptor.Id = :p_id AND matchEm.Estado = 1";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("UsuarioENdameUsuariosMatchPendienteHQL");
+                query.SetParameter ("p_id", p_id);
+
+                result = query.List<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoGenNHibernate.Exceptions.DataLayerException ("Error in UsuarioCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> DameUsuariomatchPendienteEmisor (int p_id)
+{
+        System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM UsuarioEN self where select usu FROM UsuarioEN as usu inner join usu.Match_receptor as matchEm where matchEm.Usuario_emisor.Id = :p_id AND (matchEm.Estado = 1 OR matchEm.Estado = 3)";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("UsuarioENdameUsuariomatchPendienteEmisorHQL");
+                query.SetParameter ("p_id", p_id);
+
+                result = query.List<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoGenNHibernate.Exceptions.DataLayerException ("Error in UsuarioCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+public System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> DameUsuariosMatchRechazadoReceptor (int p_id)
+{
+        System.Collections.Generic.IList<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM UsuarioEN self where select usu FROM UsuarioEN as usu inner join usu.Match_receptor as matchRep where matchRep.Usuario_emisor.Id = :p_id AND matchRep.Estado = 3";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("UsuarioENdameUsuariosMatchRechazadoReceptorHQL");
                 query.SetParameter ("p_id", p_id);
 
                 result = query.List<ProyectoGenNHibernate.EN.Proyecto.UsuarioEN>();

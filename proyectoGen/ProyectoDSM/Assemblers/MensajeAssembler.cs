@@ -11,11 +11,15 @@ namespace ProyectoDSM.Assembler
     {
         public MensajeViewModel ConvertENToModelUI(MensajeEN en)
         {
+
             MensajeViewModel usu = new MensajeViewModel();
             usu.Id = en.Id;
             usu.Contenido = en.Contenido;
             usu.Estado = en.Estado;
-
+            usu.IdReceptor = en.Usuario_receptor.Id;
+            usu.IdEmisor = en.Usuario_emisor.Id;
+            usu.NombreReceptor = en.Usuario_receptor.Nickname;
+            usu.NombreEmisor = en.Usuario_emisor.Nickname;
 
             return usu;
         }

@@ -109,36 +109,28 @@ namespace ProyectoDSM.Controllers
             }
 
             if (cambioEstado && idMatch!=-1 && matchEN != null){
-                matchCEN.Modify(idMatch, ProyectoGenNHibernate.Enumerated.Proyecto.EstadoMatchEnum.aceptado);
+                try
+                {
+                    SessionClose();
+                    matchCEN = new MatchCEN();
+                    matchCEN.GestionarMatch(idMatch, ProyectoGenNHibernate.Enumerated.Proyecto.EstadoMatchEnum.aceptado);
+                    
+                    
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("match: " + e);
+                }
+                
                 matchViewModel = new MatchAssembler().ConvertENToModelUI(matchEN);
-                //matchEN = matchCEN.ReadOID(idMatch);
+                
             }
-
-            SessionClose();
-            //return View(matchViewModel);
-            return RedirectToAction("ChatBase","Mensaje");
-        }
-        /*
-        public ActionResult AceptarMatch(int id, MatchViewModel matchViewModel)
-        {
             
-            SessionInitialize();
-            UsuarioCAD usuarioCAD = new UsuarioCAD(session);
-            UsuarioCEN usuarioCEN = new UsuarioCEN(usuarioCAD);
-            MatchCAD matchCAD = new MatchCAD(session);
-            MatchCEN matchCEN = new MatchCEN(matchCAD);
-
-
-            UsuarioEN usuario = (UsuarioEN)Session["Usuario"];
-            MatchEN matchEN = matchCAD.ReadOIDDefault(matchViewModel.Id);
-
-            matchCEN.GestionarMatch(matchViewModel.Id, ProyectoGenNHibernate.Enumerated.Proyecto.EstadoMatchEnum.aceptado);
-           
-
-            SessionClose();
-            return RedirectToAction("ChatBase", "Mensaje");
+            
+            return RedirectToAction("ChatBase","Mensaje");
+            
         }
-        */
+        
         public ActionResult RechazarMatch(int id)
         {
             SessionInitialize();
@@ -172,77 +164,58 @@ namespace ProyectoDSM.Controllers
 
             if (cambioEstado && idMatch != -1)
             {
+                SessionClose();
+                matchCEN = new MatchCEN();
                 matchCEN.GestionarMatch(idMatch, ProyectoGenNHibernate.Enumerated.Proyecto.EstadoMatchEnum.rechazado);
-                matchEN = matchCEN.ReadOID(idMatch);
+                
             }
 
-            SessionClose();
-            return RedirectToAction("Index");
+            
+            return RedirectToAction("Index","Usuario");
         }
 
 
-        //GET: Match/VerMatchs
-        /*
-        public ActionResult VerMatchs(int id)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-                SessionInitialize();
-                UsuarioCAD cadArt = new UsuarioCAD(session);
-                UsuarioCEN cen = new UsuarioCEN(cadArt);
-
-
-                //IList<MensajeEN> listArtEn = cen.DameMensajes();
-
-                IList<UsuarioEN> listUsuMatchEm = cen.DameUsuariosMatchEmisor(id);
-                IList<UsuarioEN> listUsuMatchRe = cen.DameUsuariosMatchReceptor(id);
-                IEnumerable<UsuarioViewModel> listUsuEm = new UsuarioAssembler().ConvertListENToModel(listUsuMatchEm).ToList();
-                IEnumerable<UsuarioViewModel> listUsuRe = new UsuarioAssembler().ConvertListENToModel(listUsuMatchRe).ToList();
-                //Como convierto las dos listas en una
-                //IEnumerable<UsuarioViewModel> listUsuMatch = ;
-                IEnumerable<UsuarioViewModel> listUsus = listUsuEm.Concat(listUsuRe).ToList();
-
-                Session["listaUsuariosMatch"] = listUsus;
-
-                SessionClose();
-
-                return RedirectToAction("ChatBase");
-            }
-            catch
-            {
-                return View();
-            }
-        }*/
-
-
-        
         // GET: Match/Create
         public ActionResult Create(int id)
         {
-            /*UsuarioEN usuario = (UsuarioEN)Session["Usuario"];
-            MatchCP matchCP = new MatchCP();
-            try
-            {
-                matchCP.New2(usuario.Id, id);
-                return RedirectToAction("Index");
-            }
-            catch 
-            {
-                return View();
-            }*/
-            /*MatchViewModel art = new MatchViewModel();
-            //como paso el id de este al otro?
-            Session["MatchId"] = id;*/
+            UsuarioCEN usuarioCEN = new UsuarioCEN();
+            //SesionCEN sesionCEN = new SesionCEN();
             UsuarioEN usuario = (UsuarioEN)Session["Usuario"];
             MatchCP matchCP = new MatchCP();
-           
+            
             try
             {
-                matchCP.New2(usuario.Id, id);
-                return RedirectToAction("Notificacion","Notificacion");
+                //SessionInitialize();
+                //SesionCAD sesionCAD = new SesionCAD(session);
+                SesionCEN sesionCEN = new SesionCEN();
+                //NotificacionCAD notificacionCAD = new NotificacionCAD(session);
+                NotificacionCEN notificacionCEN = new NotificacionCEN();
+                IList<SesionEN> listaSesiones = null;
+                int id_Usuario = id;
+                try
+                {
+                    listaSesiones = sesionCEN.ReadAll(0, -1);
+
+                    listaSesiones = sesionCEN.DameUltimaSesionUsuario(id_Usuario);
+                    matchCP.New2(usuario.Id, id);
+
+                }
+                catch (Exception e)
+                {
+
+                }
+                if(listaSesiones != null)
+                {
+
+                    int idSesion = listaSesiones[0].Id;
+                    int idNoti=notificacionCEN.New_("Has recibido una nueva petición de "+usuario.Nickname);
+                    notificacionCEN.AsignarSesion(idNoti, idSesion);
+                }
+                //SessionClose();
+                //return RedirectToAction("Notificacion","Notificacion");
+                return RedirectToAction("Buscar","Usuario");
             }
-            catch
+            catch (Exception e)
             {
                 return View();
             }

@@ -15,7 +15,7 @@ namespace ProyectoDSM.Assembler
             prem.Precio = en.Precio;
             prem.EstadoCompra = en.EstadoCompra;
             prem.Fecha_compra = (DateTime)en.Fecha_compra;
-            prem.Fecha_caduca = (DateTime)en.Fecha_caduca;
+            prem.Fecha_caduca = (DateTime)en.Fecha_compra;
 
             return prem;
         }

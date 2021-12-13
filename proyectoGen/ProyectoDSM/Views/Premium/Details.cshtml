@@ -1,4 +1,4 @@
-﻿@model frontDSM.Models.PremiumViewModel
+﻿@model ProyectoDSM.Models.PremiumViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -38,6 +38,7 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    
+    @Html.ActionLink("Aceptar", "Decision", new { decision = true}) |
+    @Html.ActionLink("Cancelar", "Decision", new { decision = false })
 </p>

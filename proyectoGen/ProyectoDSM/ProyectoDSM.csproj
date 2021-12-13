@@ -304,11 +304,20 @@
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\ListaUsuariosPartial.cshtml" />
     <Content Include="Views\Match\MatchsRecibidos.cshtml" />
-    <Content Include="Views\Mensaje\MandarMensaje.cshtml" />
     <Content Include="Views\Mensaje\ChatBase.cshtml" />
     <Content Include="Views\Mensaje\Mensajes.cshtml" />
     <Content Include="Views\Match\Create.cshtml" />
     <Content Include="Views\Usuario\Crear.cshtml" />
+    <Content Include="Views\Mensaje\CreatePartial.cshtml" />
+    <Content Include="Views\Mensaje\ListaMensajesPartial.cshtml" />
+    <Content Include="Views\Premium\CrearPremium.cshtml" />
+    <Content Include="Views\Premium\ListaDetalles.cshtml" />
+    <Content Include="Views\Premium\Inicial.cshtml" />
+    <Content Include="Views\Premium\Realizado.cshtml" />
+    <Content Include="Views\Premium\Rechazado.cshtml" />
+    <Content Include="Views\Usuario\MiPerfil.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

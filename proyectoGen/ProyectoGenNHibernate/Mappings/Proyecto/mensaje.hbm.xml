@@ -51,6 +51,6 @@
 		  <query name="MensajeENdameMensajesEmisorHQL"><![CDATA[select men FROM MensajeEN as men INNER JOIN men.Usuario_emisor as usuEm WHERE men.Usuario_emisor = :p_id]]></query>
 		  <query name="MensajeENdameMensajesReceptorHQL"><![CDATA[select men FROM MensajeEN as men INNER JOIN men.Usuario_receptor as usuRep WHERE men.Usuario_receptor = :p_id]]></query>
 		  <query name="MensajeENdameMensajesHQL"><![CDATA[select men FROM MensajeEN as men INNER JOIN men.Usuario_emisor as usuEm WHERE men.Usuario_emisor = :p_idUsuario OR men.Usuario_receptor = :p_idUsuario ORDER BY men.HoraEnvio DESC]]></query>
-		  <query name="MensajeENdameMensajesEntreEstos2HQL"><![CDATA[select men FROM MensajeEN as men INNER JOIN men.Usuario_emisor as usuEm WHERE (men.Usuario_receptor = :p_idUsuarioReceptor AND men.Usuario_emisor = :p_idUsuario) OR (men.Usuario_receptor = :p_idUsuario AND men.Usuario_emisor = :p_idUsuarioReceptor) ORDER BY men.HoraEnvio DESC]]></query>
+		  <query name="MensajeENdameMensajesEntreEstos2HQL"><![CDATA[select men FROM MensajeEN as men INNER JOIN men.Usuario_emisor as usuEm WHERE (men.Usuario_receptor = :p_idUsuarioReceptor AND men.Usuario_emisor = :p_idUsuario) OR (men.Usuario_receptor = :p_idUsuario AND men.Usuario_emisor = :p_idUsuarioReceptor) ORDER BY men.HoraEnvio ASC]]></query>
 		</hibernate-mapping>
 	
