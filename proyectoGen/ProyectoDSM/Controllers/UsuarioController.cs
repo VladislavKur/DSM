@@ -38,6 +38,8 @@ namespace ProyectoDSM.Controllers
             UsuarioCAD usuarioCAD = new UsuarioCAD(session);
             UsuarioCEN usuarioCEN = new UsuarioCEN(usuarioCAD);
             UsuarioEN usuario = (UsuarioEN)Session["Usuario"];
+
+
             
             if (pagina == -1)
                 pagina = 0;
@@ -132,10 +134,10 @@ namespace ProyectoDSM.Controllers
             IList<UsuarioEN> listUsusMatch = listUsuMatchEm.Concat(listUsuMatchRe).Concat(listUsuMatchReP).Concat(listUsuMatchReP2).ToList();
             //los usuarios que no sean match
             IList<UsuarioEN> listDif = listUsus.Except(listUsusMatch).ToList();
-
-            
-
             IEnumerable<UsuarioViewModel> listViewModel = new UsuarioAssembler().ConvertListENToModel(listDif).ToList();
+
+            ViewData ["totalPagina"] = listDif.Count / 10;
+
             SessionClose();
             if (listDif.Count >= 10)    //para que no deje pasar de pagina si hay menos de 10 resultados
             {
@@ -288,7 +290,7 @@ namespace ProyectoDSM.Controllers
         [HttpPost]
         public ActionResult Create(UsuarioViewModel usu/*, HttpPostedFileBase file*/)
         {
-            /*string fileName = "", path = "";
+           /* string fileName = "", path = "";
             // Verify that the user selected a file
             if (file != null && file.ContentLength > 0)
             {
@@ -298,8 +300,8 @@ namespace ProyectoDSM.Controllers
                 path = Path.Combine(Server.MapPath("~/Images/Uploads"), fileName);
                 //string pathDef = path.Replace(@"\\", @"\");
                 file.SaveAs(path);
-            }*/
-
+            }
+            */
             
             try
             {
@@ -310,7 +312,7 @@ namespace ProyectoDSM.Controllers
                 //int id = usuCEN.New_(usu.Password, usu.Email, usu.Nickname, usu.Nombre, usu.Apellidos, usu.Fecha_nacimiento,
                 //            usu.Orientacion_sexual, usu.Genero, usu.Fecha_registro, usu.Like_counter, fileName);
                 int id = usuCEN.New_(usu.Password, usu.Email, usu.Nickname, usu.Nombre, usu.Apellidos, usu.Fecha_nacimiento,
-                            usu.Orientacion_sexual, usu.Genero, usu.Fecha_registro, usu.Like_counter,usu.Imagen);
+                            usu.Orientacion_sexual, usu.Genero, usu.Fecha_registro, 0, "a");
                 usuCEN.CalcularEdad(id);
 
                 return RedirectToAction("Index");

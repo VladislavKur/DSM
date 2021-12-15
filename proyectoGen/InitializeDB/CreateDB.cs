@@ -85,7 +85,8 @@ public static void InitializeData ()
                 UsuarioCEN usuarioCEN = new UsuarioCEN ();
 
                 //int idUsu = usuarioCEN.New_ ("1234", "hola@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (1800, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 0, @"https://pixnio.com/free-images/2021/09/21/2021-09-21-09-26-06-550x729.jpg");
-                int idUsu = usuarioCEN.New_ ("1234", "hola@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (1800, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 0);
+                int idUsu = usuarioCEN.New_ ("1234", "hola@gmail.com", "paqnazco69", "Lucia", "Oliva", 
+                    new DateTime (1800, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 0,"a");
                 usuarioCEN.CalcularEdad (idUsu);
                 //vamos a decrementar en un usuario que no tiene likes debe saltar error
                 Console.WriteLine ("Vamos a decrementar los likes del usuario (debe dar error)");
@@ -104,7 +105,9 @@ public static void InitializeData ()
                 //Ahora decrementa cuando si puede hacerlo
                 Console.WriteLine ("Vamos a decrementar los likes del usuario2 (no debe dar error)");
                 //int idUsu2 = usuarioCEN.New_ ("1234", "tanga@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (2001, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 5, @"https://cdn.stocksnap.io/img-thumbs/960w/girl-portrait_OWJB5WGPME.jpg");
-                int idUsu2 = usuarioCEN.New_ ("1234", "tanga@gmail.com", "paqnazco69", "Lucia", "Oliva", new DateTime (2001, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer, new DateTime (2021, 11, 1), 5);
+                int idUsu2 = usuarioCEN.New_ ("1234", "tanga@gmail.com", "paqnazco69", "Lucia", 
+                    "Oliva", new DateTime (2001, 6, 11), OrientacionSexualEnum.bisexual, GeneroUsuarioEnum.mujer,
+                    new DateTime (2021, 11, 1), 5,"b");
                 usuarioCEN.CalcularEdad (idUsu2);
 
 

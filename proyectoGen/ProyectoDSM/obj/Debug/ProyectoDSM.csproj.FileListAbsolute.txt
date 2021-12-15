@@ -277,4 +277,3 @@ C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\obj\Debug\ProyectoDSM.csproj.As
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\obj\Debug\ProyectoDSM.csproj.CoreCompileInputs.cache
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\obj\Debug\ProyectoDSM.dll
 C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\obj\Debug\ProyectoDSM.pdb
-C:\ooh4ria\workspaceMars\proyectoGen\ProyectoDSM\obj\Debug\ProyectoDSM.csproj.CopyComplete

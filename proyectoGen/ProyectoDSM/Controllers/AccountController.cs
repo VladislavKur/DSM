@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -201,19 +202,34 @@ namespace ProyectoDSM.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(UsuarioViewModel model)
+        public async Task<ActionResult> Register(UsuarioViewModel model, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+                string fileName = "", path = "";
+                // Verify that the user selected a file
+                if (file != null && file.ContentLength > 0)
+                {
+                    // extract only the fielname
+                    fileName = Path.GetFileName(file.FileName);
+                    // store the file inside ~/App_Data/uploads folder
+                    path = Path.Combine(Server.MapPath("~/Images/Uploads"), fileName);
+                    //string pathDef = path.Replace(@"\\", @"\");
+                    file.SaveAs(path);
+                }
+
+
+
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-
+                    fileName = "/Images/Uploads/" + fileName;
+                    
                     UsuarioCEN usuarioCEN = new UsuarioCEN();
                     int id = usuarioCEN.New_(model.Password, model.Email, model.Nickname, model.Nombre, model.Apellidos, model.Fecha_nacimiento,
-                        model.Orientacion_sexual, model.Genero, DateTime.Now, 0, model.Imagen);
+                        model.Orientacion_sexual, model.Genero, DateTime.Now, 0, fileName);
 
                     usuarioCEN.CalcularEdad(id);
 
@@ -270,16 +286,17 @@ namespace ProyectoDSM.Controllers
                 var user = await UserManager.FindByNameAsync(model.Email);
                 if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
                 {
+                    // Para obtener más información sobre cómo habilitar la confirmación de cuentas y el restablecimiento de contraseña, visite https://go.microsoft.com/fwlink/?LinkID=320771
+                    // Enviar correo electrónico con este vínculo
+                    string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id, "Restablecer contraseña", "Para restablecer la contraseña, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
+                    return RedirectToAction("ForgotPasswordConfirmation", "Account");
                     // No revelar que el usuario no existe o que no está confirmado
-                    return View("ForgotPasswordConfirmation");
+                    // return View("ForgotPasswordConfirmation");
                 }
 
-                // Para obtener más información sobre cómo habilitar la confirmación de cuentas y el restablecimiento de contraseña, visite https://go.microsoft.com/fwlink/?LinkID=320771
-                // Enviar correo electrónico con este vínculo
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Restablecer contraseña", "Para restablecer la contraseña, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                
             }
 
             // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario

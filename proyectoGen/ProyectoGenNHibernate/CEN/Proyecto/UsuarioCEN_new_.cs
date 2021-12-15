@@ -19,7 +19,11 @@ namespace ProyectoGenNHibernate.CEN.Proyecto
 {
     public partial class UsuarioCEN
     {
-        public int New_(String p_pass, string p_email, string p_nickname, string p_nombre, string p_apellidos, Nullable<DateTime> p_fecha_nacimiento, ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum p_orientacion_sexual, ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum p_genero, Nullable<DateTime> p_fecha_registro, int p_like_counter, string p_foto)
+        public int New_(String p_pass, string p_email, string p_nickname, string p_nombre, 
+            string p_apellidos, Nullable<DateTime> p_fecha_nacimiento,
+            ProyectoGenNHibernate.Enumerated.Proyecto.OrientacionSexualEnum p_orientacion_sexual,
+            ProyectoGenNHibernate.Enumerated.Proyecto.GeneroUsuarioEnum p_genero, Nullable<DateTime> p_fecha_registro
+            , int p_like_counter, string p_foto)
         {
             /*PROTECTED REGION ID(ProyectoGenNHibernate.CEN.Proyecto_Usuario_new__customized) START*/
 

@@ -6,7 +6,8 @@
 
 <h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new {enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     <h4>Cree una cuenta nueva.</h4>
@@ -73,9 +74,10 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Imagen, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input type="file" @Html.EditorFor(model => model.Imagen, new { htmlAttributes = new { @class = "form-control" } })
-                       @Html.ValidationMessageFor(model => model.Imagen, "", new { @class = "text-danger" })
+                <input type="file" name="file" />
             </div>
+
+            <a href="direccion"> <img src="icono" /></a>
         </div>
     </div>
     <div class="form-group">

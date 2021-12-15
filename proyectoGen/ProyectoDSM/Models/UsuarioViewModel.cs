@@ -75,7 +75,7 @@ namespace ProyectoDSM.Models
         public Boolean EsPremium { get; set; }
 
         [Display(Prompt = "Imagen de pefil", Description = "Imagen de perfil", Name = "Imagen ")]
-        [Required(ErrorMessage = "Debe indicar una imagen de perfil")]
+       
         public string Imagen { get; set; }
 
     }
